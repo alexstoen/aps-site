@@ -1,0 +1,10 @@
+.DS_Store
+*.zip
+files4/
+copy-sources.sh
+process-images.sh
+install-optimized-images.sh
+images/old/
+*.dng
+*.DNG
+*_SOURCE.*
