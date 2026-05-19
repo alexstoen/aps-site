@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" shape-rendering="geometricPrecision">
+  <!-- Dark background tile with rounded corners -->
+  <rect width="32" height="32" rx="6" fill="#090d13"/>
+  
+  <!--
+    Geometric A mark — optimised for 16px minimum readability.
+    Heavier strokes (3px), slightly tighter geometry.
+    White legs define the A shape; blue crossbar = brand identity signal.
+    
+    At 16px the mark reads as a bold A with a blue accent.
+    At 32px it reads as a clean geometric monogram.
+    At 180px (Apple touch) it reads as a premium brand icon.
+  -->
+  
+  <!-- Left leg -->
+  <line x1="7"  y1="26" x2="16" y2="7"
+        stroke="#ffffff" stroke-width="3"
+        stroke-linecap="round"/>
+  
+  <!-- Right leg -->
+  <line x1="16" y1="7"  x2="25" y2="26"
+        stroke="#ffffff" stroke-width="3"
+        stroke-linecap="round"/>
+  
+  <!-- Blue crossbar — positioned at visual midpoint of the A -->
+  <line x1="11.2" y1="19" x2="20.8" y2="19"
+        stroke="#1a5fa8" stroke-width="3"
+        stroke-linecap="round"/>
+</svg>
