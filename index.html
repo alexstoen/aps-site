@@ -134,10 +134,10 @@
       --ink:        #0d1117;
       --ink-2:      #3a4350;
       --ink-3:      #6b7685;
-      --blue:       #1a5fa8;
-      --blue-hover: #145091;
-      --sky:        #eaf1fa;
-      --sky-2:      #c4d9f0;
+      --blue:       #b98947;
+      --blue-hover: #9a7038;
+      --sky:        #f5f0e8;
+      --sky-2:      #e8d5a3;
       --off:        #f7f8fa;
       --rule:       #e4e8ed;
       --white:      #ffffff;
@@ -224,16 +224,27 @@
       gap: 24px;
     }
     .nav-logo {
-      font-family: var(--serif);
-      font-size: 18px;
-      color: var(--white);
-      letter-spacing: -.01em;
+      display: flex;
+      align-items: center;
+      gap: 10px;
       flex-shrink: 0;
+      text-decoration: none;
+    }
+    .nav-logo-icon { height: 24px; width: auto; display: block; flex-shrink: 0; }
+    .nav-logo-icon-white { display: block; }
+    .nav-logo-icon-black { display: none; }
+    .nav-logo-text {
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: .01em;
+      color: var(--white);
+      white-space: nowrap;
       transition: color .3s ease;
     }
-    .nav-logo span { color: #7ec8f0; }
-    #nav.scrolled .nav-logo { color: var(--ink); }
-    #nav.scrolled .nav-logo span { color: var(--blue); }
+    #nav.scrolled .nav-logo-icon-white { display: none; }
+    #nav.scrolled .nav-logo-icon-black { display: block; }
+    #nav.scrolled .nav-logo-text { color: var(--ink); }
     .nav-links {
       display: flex;
       align-items: center;
@@ -245,8 +256,8 @@
     #nav.scrolled .nav-links a { color: var(--ink-2); }
     #nav.scrolled .nav-links a:hover { color: var(--ink); }
     .nav-right { display: flex; align-items: center; gap: 16px; }
-    .nav-phone { font-size: 14px; font-weight: 500; color: rgba(255,255,255,.75); transition: color .3s ease; }
-    #nav.scrolled .nav-phone { color: var(--blue); }
+    .nav-phone { font-size: 13px; font-weight: 400; color: rgba(255,255,255,.55); transition: color .3s ease; }
+    #nav.scrolled .nav-phone { color: var(--ink-2); }
     .nav-cta {
       font-size: 13px; padding: 9px 20px;
       background: rgba(255,255,255,.15); color: var(--white);
@@ -296,14 +307,14 @@
       color: rgba(255,255,255,.78); margin-bottom: 28px;
       animation: fadeUp .6s ease both;
     }
-    .hero-eyebrow-dot { width: 6px; height: 6px; border-radius: 50%; background: #7ec8f0; flex-shrink: 0; }
+    .hero-eyebrow-dot { width: 6px; height: 6px; border-radius: 50%; background: #c9a84c; flex-shrink: 0; }
     .hero-h1 {
       font-family: var(--serif); font-size: clamp(42px, 6vw, 68px);
       font-weight: 400; line-height: 1.04; letter-spacing: -.025em;
       color: var(--white); margin-bottom: 24px;
       animation: fadeUp .6s .12s ease both;
     }
-    .hero-h1 em { color: #7ec8f0; font-style: italic; }
+    .hero-h1 em { color: #d4aa5a; font-style: italic; }
     .hero-sub {
       font-size: clamp(16px, 2vw, 18px); font-weight: 300; line-height: 1.65;
       color: rgba(255,255,255,.65); max-width: 520px; margin-bottom: 40px;
@@ -316,7 +327,7 @@
       animation: fadeUp .6s .44s ease both;
     }
     .hero-trust-item { display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 400; color: rgba(255,255,255,.6); letter-spacing: .02em; }
-    .hero-trust-item svg { width: 16px; height: 16px; color: #7ec8f0; flex-shrink: 0; }
+    .hero-trust-item svg { width: 16px; height: 16px; color: #c9a84c; flex-shrink: 0; }
     .hero-scroll {
       position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%);
       display: flex; flex-direction: column; align-items: center; gap: 6px;
@@ -365,7 +376,7 @@
     /* ─── PORTFOLIO ──────────────────────────────────────────── */
     #portfolio { padding: var(--section-y) 0; background: var(--dark); }
     .portfolio-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 40px; gap: 24px; }
-    .portfolio-header .section-label { color: #7ec8f0; }
+    .portfolio-header .section-label { color: #c9a84c; }
     .portfolio-header .section-head { font-size: clamp(28px, 4vw, 40px); color: var(--white); }
     .portfolio-link-all { font-size: 13px; color: rgba(255,255,255,.5); display: flex; align-items: center; gap: 6px; transition: color .2s ease, gap .2s ease; white-space: nowrap; }
     .portfolio-link-all:hover { color: rgba(255,255,255,.85); gap: 10px; }
@@ -422,10 +433,10 @@
 
     /* ─── CTA SECTION ────────────────────────────────────────── */
     #cta-section { padding: 100px 0; background: var(--ink); position: relative; overflow: hidden; }
-    #cta-section::before { content: ''; position: absolute; top: -100px; right: -100px; width: 500px; height: 500px; border-radius: 50%; background: radial-gradient(circle, rgba(26,95,168,.2) 0%, transparent 70%); pointer-events: none; }
+    #cta-section::before { content: ''; position: absolute; top: -100px; right: -100px; width: 500px; height: 500px; border-radius: 50%; background: radial-gradient(circle, rgba(185,137,71,.15) 0%, transparent 70%); pointer-events: none; }
     .cta-inner { position: relative; z-index: 1; display: flex; align-items: center; justify-content: space-between; gap: 48px; }
     .cta-text .section-head { font-size: clamp(28px, 4vw, 46px); color: var(--white); margin-bottom: 16px; }
-    .cta-text .section-head em { color: #7ec8f0; }
+    .cta-text .section-head em { color: #d4aa5a; }
     .cta-sub { font-size: 15px; color: rgba(255,255,255,.55); max-width: 440px; line-height: 1.65; }
     .cta-actions { display: flex; flex-direction: column; align-items: flex-end; gap: 12px; flex-shrink: 0; }
     .cta-phone-line { font-size: 13px; color: rgba(255,255,255,.45); }
@@ -478,16 +489,16 @@
     /* ─── FOOTER ──────────────────────────────────────────────── */
     #footer { background: var(--dark); padding: 60px 0 32px; }
     .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 48px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,.07); }
-    .footer-brand { font-family: var(--serif); font-size: 18px; color: var(--white); margin-bottom: 10px; }
-    .footer-brand span { color: #4aade8; }
+    .footer-brand { margin-bottom: 14px; }
+    .footer-brand-img { height: 40px; width: auto; display: block; }
     .footer-tagline { font-size: 13px; color: rgba(255,255,255,.38); line-height: 1.65; margin-bottom: 20px; }
     .footer-contact-list { display: flex; flex-direction: column; gap: 8px; }
     .footer-contact-list a { font-size: 13px; color: rgba(255,255,255,.5); transition: color .2s; }
-    .footer-contact-list a:hover { color: #4aade8; }
+    .footer-contact-list a:hover { color: #c9a84c; }
     .footer-col-title { font-size: 10px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.3); margin-bottom: 16px; }
     .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
     .footer-links a { font-size: 13px; color: rgba(255,255,255,.45); transition: color .2s; }
-    .footer-links a:hover { color: rgba(255,255,255,.85); }
+    .footer-links a:hover { color: #c9a84c; }
     .footer-certs { display: flex; flex-direction: column; gap: 10px; }
     .footer-cert { display: flex; align-items: center; gap: 8px; font-size: 12px; color: rgba(255,255,255,.45); }
     .footer-cert-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,.2); flex-shrink: 0; }
@@ -563,7 +574,9 @@
     <div class="container">
       <div class="nav-inner">
         <a href="#hero" class="nav-logo" aria-label="Aerial Professional Services home">
-          Aerial<span>.</span>PS
+          <img src="/aps-icon-white.svg" alt="" class="nav-logo-icon nav-logo-icon-white" />
+          <img src="/aps-icon-black.svg" alt="" class="nav-logo-icon nav-logo-icon-black" />
+          <span class="nav-logo-text">Aerial Professional Services</span>
         </a>
         <ul class="nav-links" role="list">
           <li><a href="#services">Services</a></li>
@@ -572,8 +585,7 @@
           <li><a href="#contact">Contact</a></li>
         </ul>
         <div class="nav-right">
-          <a href="tel:+17193080513" class="nav-phone">(719) 308-0513</a>
-          <a href="#contact" class="nav-cta">Get a Quote</a>
+          <a href="#contact" class="nav-cta">Request a Quote</a>
         </div>
         <button class="nav-burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
           <span></span><span></span><span></span>
@@ -589,8 +601,9 @@
     <a href="#about" class="nav-mobile-link">About</a>
     <a href="#contact" class="nav-mobile-link">Contact</a>
     <div class="nav-mobile-footer">
-      <a href="mailto:info@aerialprofessionalservices.com">info@aerialprofessionalservices.com</a>
-      <a href="tel:+17193080513">(719) 308-0513</a>
+      <a href="mailto:info@aerialprofessionalservices.com">Email — fastest response</a>
+      <a href="sms:+17193080513">Text: (719) 308-0513</a>
+      <a href="#contact">Request a Quote</a>
     </div>
   </div>
 
@@ -911,10 +924,10 @@
         </div>
         <div class="cta-actions reveal reveal-delay-1">
           <a href="#contact" class="btn btn-primary" style="font-size:15px; padding:15px 32px;">
-            Get My Quote
+            Request a Quote
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
-          <div class="cta-phone-line">Or call <a href="tel:+17193080513">(719) 308-0513</a></div>
+          <div class="cta-phone-line">Or text us at <a href="sms:+17193080513">(719) 308-0513</a></div>
         </div>
       </div>
     </div>
@@ -927,16 +940,16 @@
         <div class="reveal">
           <div class="section-label">Contact</div>
           <h2 class="section-head" id="contact-heading">Let's discuss<br>your project.</h2>
-          <p class="contact-info-body">Email is the fastest way to reach us. Include your project type, property address, and preferred timing — we'll get back to you within one business day.</p>
+          <p class="contact-info-body">Text or email is the fastest way to reach us. Include your project type, property address, and preferred timing — we typically respond within a few hours during business days.</p>
           <div class="contact-methods">
             <div class="contact-method">
               <div class="contact-method-icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
               </div>
               <div>
-                <div class="contact-method-label">Email — Fastest Response</div>
-                <div class="contact-method-value"><a href="mailto:info@aerialprofessionalservices.com">info@aerialprofessionalservices.com</a></div>
-                <div class="contact-method-note">Response within one business day</div>
+                <div class="contact-method-label">Text — Fastest Response</div>
+                <div class="contact-method-value"><a href="sms:+17193080513">(719) 308-0513</a></div>
+                <div class="contact-method-note">Text preferred · calls available Mon–Sat, 7am–6pm MT</div>
               </div>
             </div>
             <div class="contact-method">
@@ -944,9 +957,9 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.07 12 19.79 19.79 0 011.08 3.4 2 2 0 013.06 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
               </div>
               <div>
-                <div class="contact-method-label">Phone</div>
-                <div class="contact-method-value"><a href="tel:+17193080513">(719) 308-0513</a></div>
-                <div class="contact-method-note">Monday–Saturday, 7am–6pm MT</div>
+                <div class="contact-method-label">Email — Preferred for Project Details</div>
+                <div class="contact-method-value"><a href="mailto:info@aerialprofessionalservices.com">info@aerialprofessionalservices.com</a></div>
+                <div class="contact-method-note">Typically responds within a few hours</div>
               </div>
             </div>
             <div class="contact-method">
@@ -1040,7 +1053,7 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
               </div>
               <h3>Message sent!</h3>
-              <p>Thank you for reaching out. We'll review your project details and respond within one business day.<br><br>For urgent projects, call us at <a href="tel:+17193080513" style="color:var(--blue)">(719) 308-0513</a>.</p>
+              <p>Thank you for reaching out. We'll review your project details and typically respond within a few hours.<br><br>For fastest response, text us at <a href="sms:+17193080513" style="color:var(--blue)">(719) 308-0513</a>.</p>
             </div>
           </div>
         </div>
@@ -1053,11 +1066,13 @@
     <div class="container">
       <div class="footer-top">
         <div>
-          <div class="footer-brand">Aerial<span>.</span>PS</div>
+          <div class="footer-brand">
+            <img src="/aps-logo-color.svg" alt="Aerial Professional Services LLC" class="footer-brand-img" />
+          </div>
           <p class="footer-tagline">FAA-licensed drone photography, roof inspections, and construction monitoring for businesses in Colorado Springs, CO and surrounding areas.</p>
           <div class="footer-contact-list">
             <a href="mailto:info@aerialprofessionalservices.com">info@aerialprofessionalservices.com</a>
-            <a href="tel:+17193080513">(719) 308-0513</a>
+            <a href="sms:+17193080513">Text: (719) 308-0513</a>
           </div>
         </div>
         <div>
@@ -1102,12 +1117,12 @@
 
   <!-- ─── MOBILE STICKY CTA BAR ─────────────────────────────── -->
   <div class="mobile-sticky" id="mobileSticky" role="region" aria-label="Quick contact">
-    <a href="tel:+17193080513" class="btn btn-outline" style="border-color:rgba(255,255,255,.25);">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="width:15px;height:15px;"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.07 12 19.79 19.79 0 011.08 3.4 2 2 0 013.06 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-      Call Now
+    <a href="sms:+17193080513" class="btn btn-outline" style="border-color:rgba(255,255,255,.25);">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="width:15px;height:15px;"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+      Text Us
     </a>
     <a href="#contact" class="btn btn-primary">
-      Get My Quote
+      Request a Quote
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="width:15px;height:15px;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>
   </div>
