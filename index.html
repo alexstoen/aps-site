@@ -346,6 +346,73 @@
     .trust-text-label { font-size: 12px; font-weight: 500; color: var(--ink); line-height: 1.3; }
     .trust-text-sub { font-size: 11px; color: var(--ink-3); margin-top: 2px; }
 
+    /* ─── REVIEWS ───────────────────────────────────────────── */
+    #reviews { padding: var(--section-y) 0; background: var(--dark); }
+    .reviews-header { text-align: center; max-width: 600px; margin: 0 auto 52px; }
+    .reviews-header .section-label { color: #c9a84c; }
+    .reviews-header .section-head { font-size: clamp(28px, 4vw, 40px); color: var(--white); margin-bottom: 12px; }
+    .reviews-header-sub { font-size: 15px; color: rgba(255,255,255,.45); line-height: 1.65; }
+    .reviews-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 40px; }
+    .review-card {
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.09);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      transition: background .2s ease, border-color .2s ease;
+    }
+    .review-card:hover { background: rgba(255,255,255,.07); border-color: rgba(185,137,71,.3); }
+    .review-stars { display: flex; gap: 3px; }
+    .review-stars svg { width: 14px; height: 14px; color: #f4b942; fill: #f4b942; }
+    .review-quote {
+      font-size: 14px;
+      color: rgba(255,255,255,.72);
+      line-height: 1.7;
+      flex: 1;
+    }
+    .review-quote::before { content: '\201C'; }
+    .review-quote::after  { content: '\201D'; }
+    .review-author { display: flex; align-items: center; gap: 10px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,.07); }
+    .review-avatar {
+      width: 34px; height: 34px; border-radius: 50%;
+      background: rgba(185,137,71,.2);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--serif); font-size: 14px; color: #c9a84c;
+      flex-shrink: 0;
+    }
+    .review-name { font-size: 13px; font-weight: 500; color: rgba(255,255,255,.8); line-height: 1.2; }
+    .review-context { font-size: 11px; color: rgba(255,255,255,.35); margin-top: 2px; }
+    .reviews-cta { text-align: center; }
+    .reviews-cta-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 13px; font-weight: 500;
+      color: rgba(255,255,255,.55);
+      border: 1px solid rgba(255,255,255,.15);
+      border-radius: var(--radius-sm);
+      padding: 11px 22px;
+      transition: color .2s ease, border-color .2s ease, background .2s ease;
+    }
+    .reviews-cta-btn:hover { color: var(--white); border-color: rgba(255,255,255,.35); background: rgba(255,255,255,.05); }
+    .reviews-cta-btn svg { width: 15px; height: 15px; flex-shrink: 0; }
+    .reviews-rating-summary {
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      margin-bottom: 40px;
+    }
+    .reviews-rating-score { font-family: var(--serif); font-size: 36px; color: var(--white); line-height: 1; }
+    .reviews-rating-right { display: flex; flex-direction: column; gap: 4px; }
+    .reviews-rating-stars { display: flex; gap: 3px; }
+    .reviews-rating-stars svg { width: 16px; height: 16px; color: #f4b942; fill: #f4b942; }
+    .reviews-rating-count { font-size: 12px; color: rgba(255,255,255,.4); }
+    @media (max-width: 860px) {
+      .reviews-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 580px) {
+      .reviews-grid { grid-template-columns: 1fr; }
+      .reviews-grid .review-card:nth-child(n+4) { display: none; }
+    }
+
     /* ─── SERVICES ───────────────────────────────────────────── */
     #services { padding: var(--section-y) 0; background: var(--white); }
     .services-header { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 56px; gap: 24px; }
@@ -705,6 +772,158 @@
           <div class="trust-text-sub">SDVOB certified · Colorado Springs</div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ─── REVIEWS ────────────────────────────────────────────── -->
+  <section id="reviews" aria-labelledby="reviews-heading">
+    <div class="container">
+
+      <div class="reviews-header reveal">
+        <div class="section-label">Client Reviews</div>
+        <h2 class="section-head" id="reviews-heading">Trusted by Colorado clients.</h2>
+        <p class="reviews-header-sub">Real feedback from clients who hired Aerial Professional Services.</p>
+      </div>
+
+      <div class="reviews-rating-summary reveal">
+        <div class="reviews-rating-score">5.0</div>
+        <div class="reviews-rating-right">
+          <div class="reviews-rating-stars" aria-label="5 out of 5 stars">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          </div>
+          <div class="reviews-rating-count">5.0 &nbsp;&middot;&nbsp; 11 reviews on Google</div>
+        </div>
+      </div>
+
+      <div class="reviews-grid">
+
+        <article class="review-card reveal">
+          <div class="review-stars" aria-label="5 out of 5 stars">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          </div>
+          <p class="review-quote">Not only is he incredibly professional and authentically kind, his creative vision and artistic eye is unmatched! I would give him 10 stars and will continue to refer all of my family and friends his way!</p>
+          <div class="review-author">
+            <div class="review-avatar" aria-hidden="true">G</div>
+            <div>
+              <div class="review-name">Dr. Galya L.</div>
+              <div class="review-context">Google Review</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="review-card reveal reveal-delay-1">
+          <div class="review-stars" aria-label="5 out of 5 stars">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          </div>
+          <p class="review-quote">Alex was a pleasure to work with and I appreciate how flexible he was. I changed the schedule twice and both times he was happy to accommodate. He also made sure I got every angle, height, and view that I wanted.</p>
+          <div class="review-author">
+            <div class="review-avatar" aria-hidden="true">J</div>
+            <div>
+              <div class="review-name">Jeremy S.</div>
+              <div class="review-context">Google Local Guide &middot; 36 reviews</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="review-card reveal reveal-delay-2">
+          <div class="review-stars" aria-label="5 out of 5 stars">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          </div>
+          <p class="review-quote">I&#8217;ve worked with Alex at Aerial Professional Services on several of my listings, and I cannot recommend him highly enough. As a real estate agent, high-quality aerial photography is essential for showcasing properties effectively.</p>
+          <div class="review-author">
+            <div class="review-avatar" aria-hidden="true">T</div>
+            <div>
+              <div class="review-name">Trish I.</div>
+              <div class="review-context">Real Estate Agent &middot; Google Review</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="review-card reveal reveal-delay-1">
+          <div class="review-stars" aria-label="5 out of 5 stars">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          </div>
+          <p class="review-quote">I had Aerial Professional Services take video of my roof after a recent hail storm. It was a quick and easy way to check for damage. They did a complete survey and then detailed any potential problem spots.</p>
+          <div class="review-author">
+            <div class="review-avatar" aria-hidden="true">M</div>
+            <div>
+              <div class="review-name">Mike R.</div>
+              <div class="review-context">Google Local Guide &middot; 35 reviews</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="review-card reveal reveal-delay-2">
+          <div class="review-stars" aria-label="5 out of 5 stars">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          </div>
+          <p class="review-quote">I can&#8217;t recommend Aerial Professional Services enough. I hired them for aerial shots in one of my documentaries, and they did an outstanding job. Alex Stoen was highly collaborative and delivered amazing footage.</p>
+          <div class="review-author">
+            <div class="review-avatar" aria-hidden="true">C</div>
+            <div>
+              <div class="review-name">Cynthia C.</div>
+              <div class="review-context">Documentary &amp; Real Estate &middot; Google Review</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="review-card reveal reveal-delay-3">
+          <div class="review-stars" aria-label="5 out of 5 stars">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+          </div>
+          <p class="review-quote">I recently partnered with Aerial Professional Services for a deck project I completed for a client, and the experience exceeded my expectations. They provided exceptional before-and-after drone shots that not only impressed my client but truly showcased the craftsmanship of the work.</p>
+          <div class="review-author">
+            <div class="review-avatar" aria-hidden="true">K</div>
+            <div>
+              <div class="review-name">Kevin H.</div>
+              <div class="review-context">Contractor &middot; Google Review</div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="reviews-cta reveal">
+        <a
+          href="https://www.google.com/maps/place/Aerial+Professional+Services/@38.9979464,-105.550863,15z/data=!4m6!3m5!1s0x2d9b189f991621c1:0xfc6ff5ae8eb9af8f!8m2!3d38.9979464!4d-105.550863!16s%2Fg%2F11wxkfy4ql"
+          class="reviews-cta-btn"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Read more reviews on Google (opens in new tab)"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+          Read More Reviews on Google
+        </a>
+      </div>
+
     </div>
   </section>
 
