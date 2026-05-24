@@ -22,10 +22,10 @@
   <meta property="og:url"         content="https://aerialprofessionalservices.com/roof-inspections.html" />
   <meta property="og:title"       content="Drone Roof Inspections Colorado Springs | Aerial Professional Services" />
   <meta property="og:description" content="Same-day aerial roof inspection reports. High-resolution hail damage and condition documentation for homeowners, insurers, and contractors. FAA licensed, veteran-owned." />
-  <meta property="og:image"       content="https://aerialprofessionalservices.com/images/roof-inspection.jpg" />
+  <meta property="og:image"       content="https://aerialprofessionalservices.com/images/ri-hero.jpg" />
   <meta property="og:image:width"  content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt"   content="Aerial drone view of a Colorado Springs residential roof" />
+  <meta property="og:image:alt"   content="Complex multi-plane estate roof in the Colorado foothills — drone inspection documentation" />
   <meta property="og:locale"      content="en_US" />
   <meta property="og:site_name"   content="Aerial Professional Services LLC" />
 
@@ -33,7 +33,7 @@
   <meta name="twitter:card"        content="summary_large_image" />
   <meta name="twitter:title"       content="Drone Roof Inspections Colorado Springs | Aerial Professional Services" />
   <meta name="twitter:description" content="Same-day aerial roof inspection reports for insurance claims and hail damage. FAA licensed, Colorado Springs." />
-  <meta name="twitter:image"       content="https://aerialprofessionalservices.com/images/roof-inspection.jpg" />
+  <meta name="twitter:image"       content="https://aerialprofessionalservices.com/images/ri-hero.jpg" />
 
   <!-- Structured Data: Service -->
   <script type="application/ld+json">
@@ -400,6 +400,10 @@
       .footer-bottom { flex-direction: column; align-items: flex-start; gap: 8px; }
       .mobile-sticky { display: flex; }
       #footer { padding-bottom: 96px; }
+      /* Photo gallery: single column on mobile */
+      .photo-grid-mobile { grid-template-columns: 1fr !important; grid-template-rows: unset !important; }
+      .photo-grid-mobile > div:first-child { grid-row: auto !important; height: 260px; }
+      .photo-grid-mobile > div { height: 200px; }
     }
   </style>
 </head>
@@ -450,8 +454,8 @@
   <section class="page-hero" aria-labelledby="hero-h1">
     <div class="page-hero-bg">
       <img
-        src="/images/roof-inspection.jpg"
-        alt="Aerial drone view of a Colorado Springs roof showing ridgeline and field conditions"
+        src="/images/ri-hero.jpg"
+        alt="Complex multi-plane estate roof in the Colorado foothills — multiple steep pitches, turrets, and dormers documented without a single ladder"
         fetchpriority="high"
         onerror="this.style.display='none'"
       />
@@ -517,8 +521,8 @@
 
         <div class="overview-img-wrap reveal">
           <img
-            src="/images/roof-inspection.jpg"
-            alt="Close-up drone documentation of roof field and ridge condition in Colorado Springs"
+            src="/images/ri-overview-nadir.jpg"
+            alt="Nadir aerial view of a complex estate roof — multiple planes, standing seam metal turret, solar panels, and skylights documented in a single flight"
             loading="lazy"
             onerror="this.parentElement.style.background='linear-gradient(135deg,#1a2a3a,#0d1520)'"
           />
@@ -589,6 +593,49 @@
           <div class="report-item-desc">Nobody needs to be home. We fly with written authorization from the owner or their agent. Vacant listings, occupied rentals, and multi-unit properties are all straightforward.</div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ─── INSPECTION PHOTOS ─────────────────────────────────── -->
+  <section aria-labelledby="photos-h2" style="padding: 0 0 var(--section-y); background: var(--off);">
+    <div class="container">
+      <div class="reveal" style="margin-bottom: 32px;">
+        <div class="section-label">Sample Work</div>
+        <h2 class="section-head" id="photos-h2" style="font-size: clamp(22px, 2.8vw, 30px);">Actual inspection imagery.</h2>
+      </div>
+      <div class="photo-grid-mobile" style="display: grid; grid-template-columns: 2fr 1fr 1fr; grid-template-rows: 280px 240px; gap: 8px; border-radius: var(--radius-lg); overflow: hidden;">
+        <div style="grid-row: 1 / 3; border-radius: 0; overflow: hidden; background: #1a2a3a;" class="reveal">
+          <img src="/images/ri-valley-detail.jpg"
+               alt="Valley where two steep slate planes meet — pipe penetration, standing seam transition, and skylight flashing all documented in one frame"
+               loading="lazy" style="width:100%;height:100%;object-fit:cover;"
+               onerror="this.parentElement.style.background='#1a2a3a'" />
+        </div>
+        <div style="overflow: hidden; background: #1a2a3a;" class="reveal reveal-d1">
+          <img src="/images/ri-tile-closeup.jpg"
+               alt="Close-up of slate tile surface condition — individual tiles, skylight flashing, and pipe penetration clearly readable from drone altitude"
+               loading="lazy" style="width:100%;height:100%;object-fit:cover;"
+               onerror="this.parentElement.style.background='#1a2a3a'" />
+        </div>
+        <div style="overflow: hidden; background: #1a2a3a;" class="reveal reveal-d2">
+          <img src="/images/ri-turret-nadir.jpg"
+               alt="Overhead view of octagonal standing seam metal turret — every seam and the apex clearly readable, impossible to assess from the ground"
+               loading="lazy" style="width:100%;height:100%;object-fit:cover;"
+               onerror="this.parentElement.style.background='#1a2a3a'" />
+        </div>
+        <div style="overflow: hidden; background: #1a2a3a;" class="reveal reveal-d1">
+          <img src="/images/ri-damage-field.jpg"
+               alt="Downtown Colorado Springs shingle field showing color variation, algae staining, and wear patterns — real inspection documentation"
+               loading="lazy" style="width:100%;height:100%;object-fit:cover;"
+               onerror="this.parentElement.style.background='#1a2a3a'" />
+        </div>
+        <div style="overflow: hidden; background: #1a2a3a;" class="reveal reveal-d2">
+          <img src="/images/ri-eave-detail.jpg"
+               alt="Eave and gutter close-up showing deteriorated tile edges and staining — the kind of detail that requires a drone to safely document"
+               loading="lazy" style="width:100%;height:100%;object-fit:cover;"
+               onerror="this.parentElement.style.background='#1a2a3a'" />
+        </div>
+      </div>
+      <p class="reveal" style="font-size: 12px; color: var(--ink-3); margin-top: 12px; text-align: center; letter-spacing: .03em;">Real inspection imagery from completed Colorado-area jobs. Client properties shown with permission.</p>
     </div>
   </section>
 
