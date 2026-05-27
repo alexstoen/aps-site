@@ -644,6 +644,101 @@
       .mobile-sticky { display: flex; }
       #footer { padding-bottom: 96px; }
     }
+
+    /* ─── CINEMATIC FEATURE ──────────────────────────────────── */
+    #cinematic { background: var(--dark); }
+    .cin-split {
+      display: grid;
+      grid-template-columns: 55fr 45fr;
+      min-height: 520px;
+    }
+    .cin-img-panel {
+      position: relative;
+      overflow: hidden;
+      background: #050810;
+    }
+    .cin-img-panel img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 40% center;
+      opacity: .80;
+      transition: transform .6s ease, opacity .3s ease;
+    }
+    #cinematic:hover .cin-img-panel img { transform: scale(1.03); opacity: .88; }
+    .cin-img-panel::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, transparent 55%, var(--dark) 100%);
+      pointer-events: none;
+    }
+    .cin-text-panel {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 72px 80px 72px 56px;
+    }
+    .cin-label {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 20px;
+    }
+    .cin-heading {
+      font-family: var(--serif);
+      font-size: clamp(30px, 3.2vw, 44px);
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: -.02em;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+    .cin-body {
+      font-size: 15px;
+      font-weight: 300;
+      line-height: 1.72;
+      color: rgba(255,255,255,.52);
+      max-width: 360px;
+      margin-bottom: 36px;
+    }
+    .cin-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--blue);
+      letter-spacing: .01em;
+      transition: gap .2s ease, color .2s ease;
+      width: fit-content;
+    }
+    .cin-cta:hover { gap: 13px; color: #d4aa5a; }
+    .cin-cta svg { width: 16px; height: 16px; flex-shrink: 0; }
+    @media (max-width: 1024px) {
+      .cin-text-panel { padding: 64px 48px 64px 48px; }
+      .cin-body { max-width: none; }
+    }
+    @media (max-width: 860px) {
+      .cin-split { grid-template-columns: 1fr 1fr; min-height: 400px; }
+      .cin-text-panel { padding: 48px 28px 48px 24px; }
+      .cin-heading { font-size: 26px; }
+    }
+    @media (max-width: 640px) {
+      .cin-split { grid-template-columns: 1fr; min-height: auto; }
+      .cin-img-panel { height: 260px; }
+      .cin-img-panel::after {
+        background: linear-gradient(to bottom, transparent 40%, var(--dark) 100%);
+      }
+      .cin-text-panel { padding: 36px 24px 48px; }
+      .cin-heading { font-size: 28px; }
+      .cin-body { max-width: none; }
+    }
   </style>
 </head>
 
@@ -1029,6 +1124,31 @@
             </div>
           </div>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CINEMATIC FEATURE ────────────────────────────────────── -->
+  <section id="cinematic" aria-labelledby="cinematic-heading">
+    <div class="cin-split">
+      <div class="cin-img-panel">
+        <img
+          src="/images/ev-gallery-01.jpg"
+          alt="Single hot air balloon glowing amber against the night sky over Colorado Springs"
+          loading="lazy"
+          onerror="this.style.display='none'"
+        />
+      </div>
+      <div class="cin-text-panel reveal">
+        <div class="cin-label">Cinematic Productions</div>
+        <h2 class="cin-heading" id="cinematic-heading">
+          When the moment<br>demands more than<br>a photograph.
+        </h2>
+        <p class="cin-body">Full-event aerial video production for festivals, competitions, and branded experiences across Colorado. Delivered as a cinematic document — not just coverage.</p>
+        <a href="/portfolio/events" class="cin-cta">
+          Watch the footage
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
       </div>
     </div>
   </section>
