@@ -93,6 +93,12 @@
   }
   </script>
 
+  <!-- LCP preload: hero image — mobile WebP, then desktop WebP -->
+  <link rel="preload" as="image" href="/images/hero-mobile.webp" type="image/webp"
+        fetchpriority="high" media="(max-width: 640px)" />
+  <link rel="preload" as="image" href="/images/hero.webp" type="image/webp"
+        fetchpriority="high" media="(min-width: 641px)" />
+
   <!-- Fonts: DM Serif Display + DM Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -302,6 +308,7 @@
     /* ─── HERO ────────────────────────────────────────────────── */
     #hero { position: relative; min-height: 100svh; display: flex; align-items: center; overflow: hidden; }
     .hero-bg { position: absolute; inset: 0; background: var(--dark); }
+    .hero-bg picture { position: absolute; inset: 0; display: block; }
     .hero-bg img { opacity: .55; object-position: 65% center; }
     .hero-bg::after {
       content: ''; position: absolute; inset: 0;
@@ -788,12 +795,17 @@
   <!-- ─── HERO ────────────────────────────────────────────────── -->
   <section id="hero" aria-labelledby="hero-heading">
     <div class="hero-bg">
-      <img
-        src="/images/hero.jpg"
-        alt="Night aerial view of Colorado Springs balloon glow festival with Cheyenne Mountain silhouette and city lights reflecting on Prospect Lake"
-        fetchpriority="high"
-        onerror="this.style.display='none'"
-      />
+      <picture>
+        <source type="image/webp" media="(max-width: 640px)" srcset="/images/hero-mobile.webp" />
+        <source type="image/jpeg" media="(max-width: 640px)" srcset="/images/hero-mobile.jpg" />
+        <source type="image/webp" srcset="/images/hero.webp" />
+        <img
+          src="/images/hero.jpg"
+          alt="Night aerial view of Colorado Springs balloon glow festival with Cheyenne Mountain silhouette and city lights reflecting on Prospect Lake"
+          fetchpriority="high"
+          onerror="this.style.display='none'"
+        />
+      </picture>
     </div>
     <div class="hero-grid" aria-hidden="true"></div>
     <div class="container">
