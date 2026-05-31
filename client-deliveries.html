@@ -309,6 +309,61 @@
     .mobile-sticky { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 90; background: rgba(9,13,19,.97); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-top: 1px solid rgba(255,255,255,.08); padding: 12px 20px; padding-bottom: max(12px, env(safe-area-inset-bottom)); gap: 10px; }
     .mobile-sticky .btn { flex: 1; justify-content: center; font-size: 13px; padding: 12px; }
 
+    /* ─── HOW IT WORKS STEPS ─────────────────────────────── */
+    #cd-how { padding: var(--section-y) 0; background: var(--off); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+    .cd-how-header { text-align: center; max-width: 540px; margin: 0 auto 56px; }
+    .cd-how-header .section-head { font-size: clamp(26px, 3.2vw, 38px); margin-bottom: 10px; }
+    .cd-how-sub { font-size: 15px; color: var(--ink-2); line-height: 1.65; }
+    .cd-how-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      position: relative;
+    }
+    .cd-how-steps::before {
+      content: '';
+      position: absolute;
+      top: 28px;
+      left: calc(16.666% + 20px);
+      right: calc(16.666% + 20px);
+      height: 1px;
+      background: var(--rule);
+      z-index: 0;
+    }
+    .cd-how-step { padding: 0 32px; position: relative; z-index: 1; }
+    .cd-how-step:first-child { padding-left: 0; }
+    .cd-how-step:last-child  { padding-right: 0; }
+    .cd-step-num-wrap {
+      width: 56px; height: 56px; border-radius: 50%;
+      border: 1px solid var(--rule);
+      background: var(--white);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 24px;
+    }
+    .cd-step-num { font-family: var(--serif); font-size: 22px; color: var(--blue); line-height: 1; }
+    .cd-step-title { font-size: 16px; font-weight: 500; color: var(--ink); margin-bottom: 10px; }
+    .cd-step-desc { font-size: 14px; color: var(--ink-2); line-height: 1.68; }
+    .cd-how-security {
+      margin-top: 48px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: var(--white);
+      border: 1px solid var(--rule);
+      border-radius: var(--radius-sm);
+      padding: 14px 18px;
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cd-how-security svg { width: 15px; height: 15px; color: var(--ink-3); flex-shrink: 0; margin-top: 2px; }
+    .cd-how-security p { font-size: 12px; color: var(--ink-3); line-height: 1.6; }
+    @media (max-width: 860px) {
+      .cd-how-steps { grid-template-columns: 1fr; gap: 40px; }
+      .cd-how-steps::before { display: none; }
+      .cd-how-step { padding: 0 !important; }
+    }
+
     /* ─── ANIMATIONS ──────────────────────────────────────── */
     @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     .cd-hero-eyebrow  { animation: fadeUp .55s .05s ease both; }
@@ -397,24 +452,25 @@
       <div class="cd-hero-content">
         <div class="cd-hero-eyebrow">
           <span class="cd-hero-eyebrow-dot" aria-hidden="true"></span>
-          Aerial Professional Services &nbsp;·&nbsp; Secure Portal
+          Aerial Professional Services &nbsp;·&nbsp; Project Delivery
         </div>
         <h1 class="cd-hero-h1" id="cd-h1">
           Secure Client<br><em>Deliveries</em>
         </h1>
         <p class="cd-hero-sub">
-          Access your project photos, videos, reports, and aerial deliverables
-          through our secure delivery platform.
+          Your project files are delivered by email — each client receives a
+          unique, private link directly to their deliverables. No shared portal.
+          No public directory.
         </p>
         <div class="cd-hero-actions">
-          <a href="https://files.aerialprofessionalservices.com" class="cd-hero-btn">
-            Access Client Deliveries
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <a href="mailto:info@aerialprofessionalservices.com?subject=Client%20Delivery%20Link%20Request" class="cd-hero-btn">
+            Need a Delivery Link?
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           </a>
         </div>
         <div class="cd-hero-notice" role="note">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg>
-          <p>Project delivery links are provided directly by Aerial Professional Services and may expire after project completion.</p>
+          <p>Delivery links are sent directly by email after your project is complete. Some links are password-protected and may expire after project completion. Contact us if you need a replacement link.</p>
         </div>
       </div>
     </div>
@@ -430,6 +486,38 @@
       </ol>
     </div>
   </nav>
+
+  <!-- ─── HOW CLIENT DELIVERY WORKS ───────────────────── -->
+  <section id="cd-how" aria-labelledby="cd-how-h2">
+    <div class="container">
+      <div class="cd-how-header reveal">
+        <div class="section-label">The Process</div>
+        <h2 class="section-head" id="cd-how-h2">How client delivery works.</h2>
+        <p class="cd-how-sub">No logins, no shared portals. Your files go directly to you through a private link sent to your inbox.</p>
+      </div>
+      <div class="cd-how-steps">
+        <div class="cd-how-step reveal">
+          <div class="cd-step-num-wrap" aria-hidden="true"><span class="cd-step-num">01</span></div>
+          <h3 class="cd-step-title">We prepare your files</h3>
+          <p class="cd-step-desc">Edited photos, video exports, reports, and supporting documentation are organized and packaged for your project.</p>
+        </div>
+        <div class="cd-how-step reveal reveal-d1">
+          <div class="cd-step-num-wrap" aria-hidden="true"><span class="cd-step-num">02</span></div>
+          <h3 class="cd-step-title">You receive a secure link</h3>
+          <p class="cd-step-desc">A unique Synology Drive delivery link is sent to your email. Some projects may include a password for added protection.</p>
+        </div>
+        <div class="cd-how-step reveal reveal-d2">
+          <div class="cd-step-num-wrap" aria-hidden="true"><span class="cd-step-num">03</span></div>
+          <h3 class="cd-step-title">Download your deliverables</h3>
+          <p class="cd-step-desc">Open the link, preview your files, and download your project deliverables directly from the secure delivery page.</p>
+        </div>
+      </div>
+      <div class="cd-how-security" role="note">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+        <p>For security, Aerial Professional Services does not provide a public client file directory. Each project is delivered through a unique private link.</p>
+      </div>
+    </div>
+  </section>
 
   <!-- ─── WHAT YOU CAN EXPECT ───────────────────────────── -->
   <section id="cd-what" aria-labelledby="cd-what-h2">
@@ -536,9 +624,9 @@
         <div class="reveal">
           <h2 class="cd-support-head" id="cd-support-h2">Need assistance?</h2>
           <p class="cd-support-body">
-            If you are having trouble accessing your delivery files, need a replacement
-            delivery link, or have questions about your project files, contact us directly.
-            We respond within one business day — usually much sooner.
+            If your delivery link has expired, you did not receive it, or you need a
+            replacement link for any reason — contact us directly. We'll resend your
+            link promptly. We respond within one business day, usually much sooner.
           </p>
           <div class="cd-contact-methods">
             <div class="cd-contact-method">
@@ -672,9 +760,9 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="width:15px;height:15px;"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
       Text Us
     </a>
-    <a href="https://files.aerialprofessionalservices.com" class="btn btn-primary">
-      Access Deliveries
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="width:15px;height:15px;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    <a href="mailto:info@aerialprofessionalservices.com?subject=Client%20Delivery%20Link%20Request" class="btn btn-primary">
+      Request a Link
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="width:15px;height:15px;"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
     </a>
   </div>
 
