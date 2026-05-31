@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO: not intended for indexing -->
+  <title>Client Deliveries | Aerial Professional Services</title>
+  <meta name="description" content="Access your project photos, videos, inspection reports, and aerial deliverables from Aerial Professional Services. Secure cloud-based delivery for drone photography clients." />
+  <meta name="robots" content="noindex,follow" />
+  <link rel="canonical" href="https://aerialprofessionalservices.com/client-deliveries" />
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/svg+xml" href="/favicon-light.svg" media="(prefers-color-scheme: light)">
+  <link rel="icon" type="image/svg+xml" href="/favicon-dark.svg" media="(prefers-color-scheme: dark)">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <meta name="theme-color" content="#090d13" />
+
+  <!-- Open Graph (for direct sharing, even if noindex) -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://aerialprofessionalservices.com/client-deliveries" />
+  <meta property="og:title"       content="Client Deliveries | Aerial Professional Services" />
+  <meta property="og:description" content="Access your project deliverables through our secure delivery platform." />
+  <meta property="og:image"       content="https://aerialprofessionalservices.com/images/og-image.jpg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── SKIP NAV ───────────────────────────────────────────── */
+    .skip-nav { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+    .skip-nav:focus { position: fixed; top: 12px; left: 12px; width: auto; height: auto; padding: 10px 20px; background: var(--white); color: var(--ink); font-size: 14px; font-weight: 500; border-radius: 6px; box-shadow: 0 4px 16px rgba(0,0,0,.2); z-index: 9999; overflow: visible; text-decoration: none; }
+
+    /* ─── RESET & BASE ──────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: 'DM Sans', system-ui, sans-serif; font-weight: 400; background: #ffffff; color: #0d1117; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ─── TOKENS ──────────────────────────────────────────── */
+    :root {
+      --ink:        #0d1117;
+      --ink-2:      #3a4350;
+      --ink-3:      #6b7685;
+      --blue:       #b98947;
+      --blue-hover: #9a7038;
+      --sky:        #f5f0e8;
+      --sky-2:      #e8d5a3;
+      --off:        #f7f8fa;
+      --rule:       #e4e8ed;
+      --white:      #ffffff;
+      --dark:       #090d13;
+      --dark-2:     #111720;
+      --serif: 'DM Serif Display', Georgia, serif;
+      --sans:  'DM Sans', system-ui, sans-serif;
+      --container: 1160px;
+      --section-y: 96px;
+      --radius-sm: 6px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+      --shadow-card: 0 1px 3px rgba(0,0,0,.06), 0 4px 16px rgba(0,0,0,.08);
+      --shadow-lift: 0 8px 32px rgba(0,0,0,.12);
+    }
+
+    /* ─── UTILITY ─────────────────────────────────────────── */
+    .container { max-width: var(--container); margin: 0 auto; padding: 0 24px; }
+    .section-label { display: inline-block; font-size: 11px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--blue); margin-bottom: 14px; }
+    .section-head { font-family: var(--serif); font-weight: 400; line-height: 1.08; letter-spacing: -.02em; color: var(--ink); }
+    .btn { display: inline-flex; align-items: center; gap: 8px; font-family: var(--sans); font-size: 14px; font-weight: 500; letter-spacing: .01em; padding: 13px 26px; border-radius: var(--radius-sm); cursor: pointer; border: none; transition: all .2s ease; white-space: nowrap; }
+    .btn-primary { background: var(--ink); color: var(--white); }
+    .btn-primary:hover { background: #1d2734; transform: translateY(-1px); }
+    .btn-blue { background: var(--blue); color: var(--white); }
+    .btn-blue:hover { background: var(--blue-hover); transform: translateY(-1px); }
+    .btn-outline { background: transparent; color: var(--white); border: 1px solid rgba(255,255,255,.35); }
+    .btn-outline:hover { background: rgba(255,255,255,.1); border-color: rgba(255,255,255,.55); }
+    .btn-ghost { background: transparent; color: var(--white); border: 1px solid rgba(255,255,255,.25); }
+    .btn svg { width: 16px; height: 16px; transition: transform .2s ease; }
+    .btn:hover svg { transform: translateX(3px); }
+
+    /* ─── NAVIGATION ──────────────────────────────────────── */
+    #nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; transition: background .3s ease, box-shadow .3s ease; }
+    #nav.scrolled { background: rgba(255,255,255,.95); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); box-shadow: 0 1px 0 var(--rule); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 68px; gap: 24px; }
+    .nav-logo { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+    .nav-logo-icon { height: 24px; width: auto; display: block; flex-shrink: 0; }
+    .nav-logo-icon-white { display: block; }
+    .nav-logo-icon-black { display: none; }
+    .nav-logo-text { font-family: var(--sans); font-size: 14px; font-weight: 500; letter-spacing: .01em; color: var(--white); white-space: nowrap; transition: color .3s ease; }
+    #nav.scrolled .nav-logo-icon-white { display: none; }
+    #nav.scrolled .nav-logo-icon-black { display: block; }
+    #nav.scrolled .nav-logo-text { color: var(--ink); }
+    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; }
+    .nav-links a { font-size: 14px; color: rgba(255,255,255,.82); font-weight: 400; transition: color .2s ease; }
+    .nav-links a:hover { color: var(--white); }
+    #nav.scrolled .nav-links a { color: var(--ink-2); }
+    #nav.scrolled .nav-links a:hover { color: var(--ink); }
+    .nav-right { display: flex; align-items: center; gap: 16px; }
+    .nav-cta { font-size: 13px; padding: 9px 20px; background: rgba(255,255,255,.15); color: var(--white); border: 1px solid rgba(255,255,255,.3); border-radius: var(--radius-sm); font-weight: 500; transition: all .2s ease; }
+    .nav-cta:hover { background: rgba(255,255,255,.25); }
+    #nav.scrolled .nav-cta { background: var(--ink); color: var(--white); border-color: var(--ink); }
+    #nav.scrolled .nav-cta:hover { background: #1d2734; }
+    .nav-burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; }
+    .nav-burger span { display: block; width: 24px; height: 2px; background: var(--white); border-radius: 2px; transition: all .25s ease; }
+    #nav.scrolled .nav-burger span { background: var(--ink); }
+    .nav-burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .nav-burger.open span:nth-child(2) { opacity: 0; }
+    .nav-burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav-mobile { display: none; position: fixed; inset: 0; background: var(--dark); z-index: 99; padding: 100px 32px 48px; flex-direction: column; gap: 8px; }
+    .nav-mobile.open { display: flex; }
+    .nav-mobile a { font-size: 28px; font-family: var(--serif); color: var(--white); padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,.08); }
+    .nav-mobile-footer { margin-top: auto; display: flex; flex-direction: column; gap: 12px; }
+    .nav-mobile-footer a { font-size: 16px; font-family: var(--sans); color: rgba(255,255,255,.6); border-bottom: none; padding: 4px 0; }
+
+    /* ─── BREADCRUMB ──────────────────────────────────────── */
+    .breadcrumb { background: var(--dark-2); border-bottom: 1px solid rgba(255,255,255,.06); padding: 14px 0; }
+    .breadcrumb-list { display: flex; align-items: center; gap: 8px; list-style: none; }
+    .breadcrumb-list a { font-size: 12px; color: rgba(255,255,255,.45); transition: color .2s; }
+    .breadcrumb-list a:hover { color: rgba(255,255,255,.8); }
+    .breadcrumb-list li { font-size: 12px; color: rgba(255,255,255,.28); }
+    .breadcrumb-list li:last-child { color: rgba(255,255,255,.65); }
+
+    /* ─── HERO ────────────────────────────────────────────── */
+    .cd-hero {
+      background: var(--dark);
+      padding: 148px 0 88px;
+      position: relative;
+      overflow: hidden;
+    }
+    .cd-hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(255,255,255,.022) 59px, rgba(255,255,255,.022) 60px),
+        repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(255,255,255,.022) 59px, rgba(255,255,255,.022) 60px);
+      pointer-events: none;
+    }
+    .cd-hero-glow {
+      position: absolute;
+      top: -120px;
+      left: -80px;
+      width: 560px;
+      height: 560px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(185,137,71,.10) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cd-hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 680px;
+    }
+    .cd-hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.13);
+      border-radius: 100px;
+      padding: 5px 14px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.72);
+      margin-bottom: 28px;
+    }
+    .cd-hero-eyebrow-dot { width: 6px; height: 6px; border-radius: 50%; background: #c9a84c; flex-shrink: 0; }
+    .cd-hero-h1 {
+      font-family: var(--serif);
+      font-size: clamp(38px, 5.5vw, 62px);
+      font-weight: 400;
+      line-height: 1.05;
+      letter-spacing: -.025em;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+    .cd-hero-h1 em { color: #d4aa5a; font-style: italic; }
+    .cd-hero-sub {
+      font-size: clamp(15px, 1.8vw, 17px);
+      font-weight: 300;
+      line-height: 1.68;
+      color: rgba(255,255,255,.6);
+      max-width: 500px;
+      margin-bottom: 36px;
+    }
+    .cd-hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-bottom: 40px; }
+    .cd-hero-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--blue);
+      color: var(--white);
+      font-family: var(--sans);
+      font-size: 15px;
+      font-weight: 500;
+      padding: 15px 32px;
+      border-radius: var(--radius-sm);
+      border: none;
+      cursor: pointer;
+      transition: background .2s ease, transform .2s ease;
+      white-space: nowrap;
+    }
+    .cd-hero-btn:hover { background: var(--blue-hover); transform: translateY(-1px); }
+    .cd-hero-btn svg { width: 17px; height: 17px; transition: transform .2s ease; }
+    .cd-hero-btn:hover svg { transform: translateX(3px); }
+    .cd-hero-notice {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: rgba(255,255,255,.045);
+      border: 1px solid rgba(255,255,255,.09);
+      border-radius: var(--radius-sm);
+      padding: 13px 16px;
+      max-width: 500px;
+    }
+    .cd-hero-notice svg { width: 15px; height: 15px; color: rgba(255,255,255,.4); flex-shrink: 0; margin-top: 2px; }
+    .cd-hero-notice p { font-size: 12px; color: rgba(255,255,255,.42); line-height: 1.6; }
+
+    /* ─── WHAT YOU CAN EXPECT ─────────────────────────────── */
+    #cd-what { padding: var(--section-y) 0; background: var(--white); }
+    .cd-what-header { text-align: center; max-width: 580px; margin: 0 auto 56px; }
+    .cd-what-header .section-head { font-size: clamp(28px, 3.5vw, 40px); margin-bottom: 12px; }
+    .cd-what-sub { font-size: 15px; color: var(--ink-2); line-height: 1.65; }
+    .cd-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .cd-card {
+      background: var(--off);
+      border: 1px solid var(--rule);
+      border-radius: var(--radius-lg);
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      transition: box-shadow .25s ease, border-color .25s ease, transform .25s ease;
+    }
+    .cd-card:hover { box-shadow: var(--shadow-lift); border-color: var(--sky-2); transform: translateY(-2px); }
+    .cd-card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: var(--sky);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-bottom: 20px;
+    }
+    .cd-card-icon svg { width: 22px; height: 22px; color: var(--blue); }
+    .cd-card-name { font-family: var(--serif); font-size: 18px; font-weight: 400; color: var(--ink); line-height: 1.25; margin-bottom: 10px; }
+    .cd-card-desc { font-size: 13px; color: var(--ink-2); line-height: 1.68; }
+
+    /* ─── SUPPORT + TRUST ─────────────────────────────────── */
+    #cd-support { padding: var(--section-y) 0; background: var(--off); border-top: 1px solid var(--rule); }
+    .cd-support-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
+    .cd-support-head { font-family: var(--serif); font-size: clamp(26px, 3vw, 36px); font-weight: 400; color: var(--ink); margin-bottom: 16px; line-height: 1.1; }
+    .cd-support-body { font-size: 15px; color: var(--ink-2); line-height: 1.72; margin-bottom: 28px; }
+    .cd-contact-methods { display: flex; flex-direction: column; gap: 14px; }
+    .cd-contact-method { display: flex; align-items: center; gap: 14px; }
+    .cd-contact-method-icon { width: 40px; height: 40px; border-radius: 10px; background: var(--sky); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .cd-contact-method-icon svg { width: 18px; height: 18px; color: var(--blue); }
+    .cd-contact-method-label { font-size: 11px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 2px; }
+    .cd-contact-method-value { font-size: 15px; font-weight: 500; color: var(--ink); }
+    .cd-contact-method-value a { color: var(--blue); transition: color .2s; }
+    .cd-contact-method-value a:hover { color: var(--blue-hover); }
+
+    /* Trust badges column */
+    .cd-trust-col { display: flex; flex-direction: column; gap: 0; }
+    .cd-trust-col-label { font-size: 11px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 20px; }
+    .cd-trust-badges { display: flex; flex-direction: column; gap: 0; border: 1px solid var(--rule); border-radius: var(--radius-lg); overflow: hidden; background: var(--white); }
+    .cd-trust-badge { display: flex; align-items: center; gap: 14px; padding: 18px 22px; border-bottom: 1px solid var(--rule); }
+    .cd-trust-badge:last-child { border-bottom: none; }
+    .cd-trust-badge-icon { width: 36px; height: 36px; border-radius: 9px; background: var(--sky); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .cd-trust-badge-icon svg { width: 18px; height: 18px; color: var(--blue); }
+    .cd-trust-badge-text { font-size: 14px; font-weight: 500; color: var(--ink); }
+    .cd-trust-badge-sub { font-size: 12px; color: var(--ink-3); margin-top: 1px; }
+
+    /* ─── FOOTER ──────────────────────────────────────────── */
+    #footer { background: var(--dark); padding: 60px 0 32px; }
+    .footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 48px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,.07); }
+    .footer-brand { margin-bottom: 14px; }
+    .footer-brand-img { height: 40px; width: auto; display: block; }
+    .footer-tagline { font-size: 13px; color: rgba(255,255,255,.38); line-height: 1.65; margin-bottom: 20px; }
+    .footer-contact-list { display: flex; flex-direction: column; gap: 8px; }
+    .footer-contact-list a { font-size: 13px; color: rgba(255,255,255,.5); transition: color .2s; }
+    .footer-contact-list a:hover { color: #c9a84c; }
+    .footer-col-title { font-size: 10px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.3); margin-bottom: 16px; }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-links a { font-size: 13px; color: rgba(255,255,255,.45); transition: color .2s; }
+    .footer-links a:hover { color: #c9a84c; }
+    .footer-links a.footer-link-accent { color: rgba(185,137,71,.7); }
+    .footer-links a.footer-link-accent:hover { color: #c9a84c; }
+    .footer-certs { display: flex; flex-direction: column; gap: 10px; }
+    .footer-cert { display: flex; align-items: center; gap: 8px; font-size: 12px; color: rgba(255,255,255,.45); }
+    .footer-cert-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,.2); flex-shrink: 0; }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; padding-top: 28px; gap: 16px; }
+    .footer-copy { font-size: 11px; color: rgba(255,255,255,.2); }
+    .footer-legal { display: flex; gap: 20px; }
+    .footer-legal a { font-size: 11px; color: rgba(255,255,255,.2); transition: color .2s; }
+    .footer-legal a:hover { color: rgba(255,255,255,.5); }
+
+    /* ─── MOBILE STICKY ───────────────────────────────────── */
+    .mobile-sticky { display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 90; background: rgba(9,13,19,.97); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-top: 1px solid rgba(255,255,255,.08); padding: 12px 20px; padding-bottom: max(12px, env(safe-area-inset-bottom)); gap: 10px; }
+    .mobile-sticky .btn { flex: 1; justify-content: center; font-size: 13px; padding: 12px; }
+
+    /* ─── ANIMATIONS ──────────────────────────────────────── */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .cd-hero-eyebrow  { animation: fadeUp .55s .05s ease both; }
+    .cd-hero-h1       { animation: fadeUp .55s .15s ease both; }
+    .cd-hero-sub      { animation: fadeUp .55s .25s ease both; }
+    .cd-hero-actions  { animation: fadeUp .55s .32s ease both; }
+    .cd-hero-notice   { animation: fadeUp .55s .40s ease both; }
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-d1 { transition-delay: .1s; }
+    .reveal-d2 { transition-delay: .2s; }
+    .reveal-d3 { transition-delay: .3s; }
+
+    /* ─── RESPONSIVE ──────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      :root { --section-y: 72px; }
+      .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
+      .cd-support-grid { gap: 48px; }
+    }
+    @media (max-width: 860px) {
+      .cd-cards { grid-template-columns: 1fr 1fr; }
+      .cd-support-grid { grid-template-columns: 1fr; gap: 48px; }
+    }
+    @media (max-width: 640px) {
+      :root { --section-y: 56px; }
+      .nav-links, .nav-right { display: none; }
+      .nav-burger { display: flex; }
+      .cd-hero { padding: 120px 0 72px; }
+      .cd-hero-h1 { font-size: 36px; }
+      .cd-cards { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; gap: 8px; }
+      .mobile-sticky { display: flex; }
+      #footer { padding-bottom: 96px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <a class="skip-nav" href="#cd-what">Skip to main content</a>
+
+  <!-- ─── NAVIGATION ─────────────────────────────────────── -->
+  <nav id="nav" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="/" class="nav-logo" aria-label="Aerial Professional Services home">
+          <img src="/aps-icon-white.svg" alt="" class="nav-logo-icon nav-logo-icon-white" />
+          <img src="/aps-icon-black.svg" alt="" class="nav-logo-icon nav-logo-icon-black" />
+          <span class="nav-logo-text">Aerial Professional Services</span>
+        </a>
+        <ul class="nav-links" role="list">
+          <li><a href="/#services">Services</a></li>
+          <li><a href="/#portfolio">Portfolio</a></li>
+          <li><a href="/#about">About</a></li>
+          <li><a href="/#contact">Contact</a></li>
+        </ul>
+        <div class="nav-right">
+          <a href="/#contact" class="nav-cta">Request a Quote</a>
+        </div>
+        <button class="nav-burger" id="navBurger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="nav-mobile" id="navMobile" role="dialog" aria-label="Mobile navigation">
+    <a href="/#services">Services</a>
+    <a href="/#portfolio">Portfolio</a>
+    <a href="/#about">About</a>
+    <a href="/#contact">Contact</a>
+    <div class="nav-mobile-footer">
+      <a href="mailto:info@aerialprofessionalservices.com">Email — fastest response</a>
+      <a href="sms:+17193080513">Text: (719) 308-0513</a>
+      <a href="/#contact">Request a Quote</a>
+    </div>
+  </div>
+
+  <!-- ─── HERO ──────────────────────────────────────────── -->
+  <section class="cd-hero" aria-labelledby="cd-h1">
+    <div class="cd-hero-grid" aria-hidden="true"></div>
+    <div class="cd-hero-glow" aria-hidden="true"></div>
+    <div class="container">
+      <div class="cd-hero-content">
+        <div class="cd-hero-eyebrow">
+          <span class="cd-hero-eyebrow-dot" aria-hidden="true"></span>
+          Aerial Professional Services &nbsp;·&nbsp; Secure Portal
+        </div>
+        <h1 class="cd-hero-h1" id="cd-h1">
+          Secure Client<br><em>Deliveries</em>
+        </h1>
+        <p class="cd-hero-sub">
+          Access your project photos, videos, reports, and aerial deliverables
+          through our secure delivery platform.
+        </p>
+        <div class="cd-hero-actions">
+          <a href="https://files.aerialprofessionalservices.com" class="cd-hero-btn">
+            Access Client Deliveries
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+        <div class="cd-hero-notice" role="note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg>
+          <p>Project delivery links are provided directly by Aerial Professional Services and may expire after project completion.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── BREADCRUMB ────────────────────────────────────── -->
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <div class="container">
+      <ol class="breadcrumb-list">
+        <li><a href="/">Home</a></li>
+        <li aria-hidden="true">›</li>
+        <li>Client Deliveries</li>
+      </ol>
+    </div>
+  </nav>
+
+  <!-- ─── WHAT YOU CAN EXPECT ───────────────────────────── -->
+  <section id="cd-what" aria-labelledby="cd-what-h2">
+    <div class="container">
+      <div class="cd-what-header reveal">
+        <div class="section-label">Your Deliverables</div>
+        <h2 class="section-head" id="cd-what-h2">What you can expect.</h2>
+        <p class="cd-what-sub">Every delivery is organized, labeled, and ready to use. Below are the file types and products included in a typical APS project delivery.</p>
+      </div>
+
+      <div class="cd-cards">
+
+        <article class="cd-card reveal">
+          <div class="cd-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/>
+              <circle cx="12" cy="13" r="4"/>
+            </svg>
+          </div>
+          <h3 class="cd-card-name">Full-resolution aerial photography</h3>
+          <p class="cd-card-desc">High-resolution edited images delivered in industry-standard formats — ready for MLS submission, print production, or digital distribution.</p>
+        </article>
+
+        <article class="cd-card reveal reveal-d1">
+          <div class="cd-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <rect x="3" y="3" width="18" height="18" rx="2"/>
+              <circle cx="8.5" cy="8.5" r="1.5"/>
+              <path d="M21 15l-5-5L5 21"/>
+            </svg>
+          </div>
+          <h3 class="cd-card-name">Edited marketing images</h3>
+          <p class="cd-card-desc">Color-corrected, exposure-balanced photographs optimized for listing presentations, web publishing, and marketing collateral.</p>
+        </article>
+
+        <article class="cd-card reveal reveal-d2">
+          <div class="cd-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <polygon points="23 7 16 12 23 17 23 7"/>
+              <rect x="1" y="5" width="15" height="14" rx="2"/>
+            </svg>
+          </div>
+          <h3 class="cd-card-name">4K video deliverables</h3>
+          <p class="cd-card-desc">Cinematic aerial video edited and exported in 4K resolution — suitable for YouTube, social media, and broadcast-quality presentations.</p>
+        </article>
+
+        <article class="cd-card reveal">
+          <div class="cd-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M2 20h20M4 20V10l8-8 8 8v10"/>
+              <path d="M10 20v-6h4v6"/>
+              <rect x="7" y="4" width="2" height="2" rx=".5" fill="currentColor" stroke="none"/>
+            </svg>
+          </div>
+          <h3 class="cd-card-name">Construction progress documentation</h3>
+          <p class="cd-card-desc">Sequential aerials organized by shoot date, providing a complete visual record of site development from groundbreaking through project completion.</p>
+        </article>
+
+        <article class="cd-card reveal reveal-d1">
+          <div class="cd-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+              <polyline points="9,22 9,12 15,12 15,22"/>
+            </svg>
+          </div>
+          <h3 class="cd-card-name">Roof inspection imagery</h3>
+          <p class="cd-card-desc">High-resolution documentation suitable for insurance claims, contractor estimates, and homeowner records — delivered as a structured image report.</p>
+        </article>
+
+        <article class="cd-card reveal reveal-d2">
+          <div class="cd-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M1 6l7-5 8 5 7-5v17l-7 5-8-5-7 5z"/>
+              <path d="M8 1v17M16 6v17"/>
+            </svg>
+          </div>
+          <h3 class="cd-card-name">Orthomosaics and mapping products</h3>
+          <p class="cd-card-desc">Georeferenced orthomosaic maps, elevation models, and site surveys in GeoTIFF and standard GIS formats — available upon project request.</p>
+        </article>
+
+        <article class="cd-card reveal" style="grid-column: 1 / -1; max-width: 380px; margin: 0 auto;">
+          <div class="cd-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+              <polyline points="14,2 14,8 20,8"/>
+              <line x1="16" y1="13" x2="8" y2="13"/>
+              <line x1="16" y1="17" x2="8" y2="17"/>
+              <polyline points="10,9 9,9 8,9"/>
+            </svg>
+          </div>
+          <h3 class="cd-card-name">Project reports and documentation</h3>
+          <p class="cd-card-desc">Delivery summaries, flight logs, FAA airspace authorization records, and supporting project documentation as applicable to your project scope.</p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SUPPORT + TRUST ───────────────────────────────── -->
+  <section id="cd-support" aria-labelledby="cd-support-h2">
+    <div class="container">
+      <div class="cd-support-grid">
+
+        <div class="reveal">
+          <h2 class="cd-support-head" id="cd-support-h2">Need assistance?</h2>
+          <p class="cd-support-body">
+            If you are having trouble accessing your delivery files, need a replacement
+            delivery link, or have questions about your project files, contact us directly.
+            We respond within one business day — usually much sooner.
+          </p>
+          <div class="cd-contact-methods">
+            <div class="cd-contact-method">
+              <div class="cd-contact-method-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 014.07 12 19.79 19.79 0 011.08 3.4 2 2 0 013.06 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+              </div>
+              <div>
+                <div class="cd-contact-method-label">Phone &amp; Text</div>
+                <div class="cd-contact-method-value"><a href="sms:+17193080513">(719) 308-0513</a></div>
+              </div>
+            </div>
+            <div class="cd-contact-method">
+              <div class="cd-contact-method-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <div class="cd-contact-method-label">Email</div>
+                <div class="cd-contact-method-value"><a href="mailto:info@aerialprofessionalservices.com">info@aerialprofessionalservices.com</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cd-trust-col reveal reveal-d1">
+          <div class="cd-trust-col-label">About Aerial Professional Services</div>
+          <div class="cd-trust-badges" role="list">
+            <div class="cd-trust-badge" role="listitem">
+              <div class="cd-trust-badge-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+              </div>
+              <div>
+                <div class="cd-trust-badge-text">FAA Part 107 Certified</div>
+                <div class="cd-trust-badge-sub">Licensed commercial remote pilot</div>
+              </div>
+            </div>
+            <div class="cd-trust-badge" role="listitem">
+              <div class="cd-trust-badge-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <div>
+                <div class="cd-trust-badge-text">$1M Liability Insured</div>
+                <div class="cd-trust-badge-sub">Full commercial coverage</div>
+              </div>
+            </div>
+            <div class="cd-trust-badge" role="listitem">
+              <div class="cd-trust-badge-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+              </div>
+              <div>
+                <div class="cd-trust-badge-text">Veteran-Owned Business</div>
+                <div class="cd-trust-badge-sub">SDVOB certified · Colorado Springs</div>
+              </div>
+            </div>
+            <div class="cd-trust-badge" role="listitem">
+              <div class="cd-trust-badge-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+              </div>
+              <div>
+                <div class="cd-trust-badge-text">Secure Cloud-Based Delivery</div>
+                <div class="cd-trust-badge-sub">Self-hosted · no third-party storage</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─────────────────────────────────────────── -->
+  <footer id="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div class="footer-brand">
+            <img src="/aps-logo-color.svg" alt="Aerial Professional Services LLC" class="footer-brand-img" />
+          </div>
+          <p class="footer-tagline">FAA-licensed drone photography, roof inspections, and construction monitoring for businesses and homeowners in Colorado Springs, CO and surrounding areas.</p>
+          <div class="footer-contact-list">
+            <a href="mailto:info@aerialprofessionalservices.com">info@aerialprofessionalservices.com</a>
+            <a href="sms:+17193080513">Text: (719) 308-0513</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-col-title">Services</div>
+          <ul class="footer-links" role="list">
+            <li><a href="/real-estate-drone-photography">Real estate photography</a></li>
+            <li><a href="/roof-inspections">Roof inspections</a></li>
+            <li><a href="/#services">Construction monitoring</a></li>
+            <li><a href="/portfolio/commercial">Commercial portfolio</a></li>
+            <li><a href="/portfolio/residential">Residential portfolio</a></li>
+            <li><a href="/portfolio/construction">Construction portfolio</a></li>
+            <li><a href="/portfolio/events">Events portfolio</a></li>
+            <li><a href="/client-deliveries" class="footer-link-accent">Client deliveries</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Service Area</div>
+          <ul class="footer-links" role="list">
+            <li><a href="/#contact">Colorado Springs</a></li>
+            <li><a href="/#contact">Pueblo, CO</a></li>
+            <li><a href="/#contact">Castle Rock, CO</a></li>
+            <li><a href="/#contact">Monument, CO</a></li>
+            <li><a href="/#contact">El Paso County</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Credentials</div>
+          <div class="footer-certs" role="list">
+            <div class="footer-cert" role="listitem"><span class="footer-cert-dot" aria-hidden="true"></span>FAA Part 107 Certified</div>
+            <div class="footer-cert" role="listitem"><span class="footer-cert-dot" aria-hidden="true"></span>$1M Liability Insured</div>
+            <div class="footer-cert" role="listitem"><span class="footer-cert-dot" aria-hidden="true"></span>Veteran-Owned Business</div>
+            <div class="footer-cert" role="listitem"><span class="footer-cert-dot" aria-hidden="true"></span>SDVOB Certified</div>
+            <div class="footer-cert" role="listitem"><span class="footer-cert-dot" aria-hidden="true"></span>Colorado Springs, CO</div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">&copy; 2026 Aerial Professional Services LLC. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="mailto:info@aerialprofessionalservices.com">Privacy</a>
+          <a href="mailto:info@aerialprofessionalservices.com">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ─── MOBILE STICKY ─────────────────────────────────── -->
+  <div class="mobile-sticky" id="mobileSticky" role="region" aria-label="Quick access">
+    <a href="sms:+17193080513" class="btn btn-ghost">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="width:15px;height:15px;"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+      Text Us
+    </a>
+    <a href="https://files.aerialprofessionalservices.com" class="btn btn-primary">
+      Access Deliveries
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="width:15px;height:15px;"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+
+  <!-- ─── JAVASCRIPT ─────────────────────────────────────── -->
+  <script>
+    (function () {
+      'use strict';
+
+      /* Nav scroll state */
+      const nav = document.getElementById('nav');
+      function updateNav() { nav.classList.toggle('scrolled', window.scrollY > 48); }
+      window.addEventListener('scroll', updateNav, { passive: true });
+      updateNav();
+
+      /* Mobile burger */
+      const burger     = document.getElementById('navBurger');
+      const mobileMenu = document.getElementById('navMobile');
+      burger.addEventListener('click', function () {
+        const open = burger.classList.toggle('open');
+        mobileMenu.classList.toggle('open', open);
+        burger.setAttribute('aria-expanded', String(open));
+        document.body.style.overflow = open ? 'hidden' : '';
+      });
+      function closeMenu() {
+        burger.classList.remove('open');
+        mobileMenu.classList.remove('open');
+        burger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
+      mobileMenu.querySelectorAll('a').forEach(function (l) { l.addEventListener('click', closeMenu); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
+
+      /* Scroll reveal */
+      const revealEls = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              io.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        revealEls.forEach(function (el) { io.observe(el); });
+      } else {
+        revealEls.forEach(function (el) { el.classList.add('visible'); });
+      }
+
+      /* Hide mobile sticky at support section */
+      const mobileSticky  = document.getElementById('mobileSticky');
+      const supportSection = document.getElementById('cd-support');
+      if (mobileSticky && supportSection && 'IntersectionObserver' in window) {
+        new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            mobileSticky.style.opacity       = entry.isIntersecting ? '0' : '1';
+            mobileSticky.style.pointerEvents = entry.isIntersecting ? 'none' : 'auto';
+          });
+        }, { threshold: 0.1 }).observe(supportSection);
+      }
+
+    })();
+  </script>
+
+</body>
+</html>
