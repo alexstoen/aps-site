@@ -171,7 +171,7 @@
     }
     .cd-hero-right-overlay {
       position: absolute; inset: 0;
-      background: linear-gradient(to right, var(--dark) 0%, rgba(9,13,19,.30) 45%, rgba(9,13,19,.08) 100%);
+      background: linear-gradient(to right, var(--dark) 0%, rgba(9,13,19,.18) 48%, rgba(9,13,19,.04) 100%);
     }
     /* ── Mock delivery card ── */
     .cd-mock-card {
@@ -200,15 +200,15 @@
     .cd-mock-card-file svg { width: 12px; height: 12px; color: rgba(255,255,255,.3); flex-shrink: 0; }
     .cd-mock-card-dl {
       display: flex; align-items: center; justify-content: center; gap: 5px;
-      width: 100%; padding: 8px;
-      background: rgba(185,137,71,.15);
-      border: 1px solid rgba(185,137,71,.32);
+      width: 100%; padding: 7px 8px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.08);
       border-radius: var(--radius-sm);
-      font-size: 11px; font-weight: 500;
-      color: #d4aa5a; letter-spacing: .03em;
-      cursor: default;
+      font-size: 10px; font-weight: 500;
+      color: rgba(255,255,255,.38); letter-spacing: .06em;
+      text-transform: uppercase;
+      cursor: default; user-select: none;
     }
-    .cd-mock-card-dl svg { width: 11px; height: 11px; }
     /* ── Eyebrow ── */
     .cd-hero-eyebrow {
       display: inline-flex; align-items: center; gap: 8px;
@@ -260,6 +260,13 @@
     }
     .cd-trust-pill svg { width: 11px; height: 11px; color: var(--blue); flex-shrink: 0; }
     /* ── Notice ── */
+    .cd-infra-line {
+      font-size: 11px;
+      color: rgba(255,255,255,.28);
+      letter-spacing: .02em;
+      line-height: 1.5;
+      margin-bottom: 14px;
+    }
     .cd-hero-notice {
       display: flex; align-items: flex-start; gap: 9px;
       background: rgba(255,255,255,.04);
@@ -521,7 +528,7 @@
             </div>
 
             <h1 class="cd-hero-h1" id="cd-h1">
-              Project Files<br><em>Delivered Securely.</em>
+              Your Project Files.<br><em>Delivered Securely.</em>
             </h1>
 
             <p class="cd-hero-sub">
@@ -532,7 +539,7 @@
 
             <div class="cd-hero-actions">
               <a href="mailto:info@aerialprofessionalservices.com?subject=Client%20Delivery%20Link%20Request" class="cd-hero-btn">
-                Request Replacement Link
+                Need Your Delivery Link?
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
               </a>
             </div>
@@ -556,9 +563,11 @@
               </span>
             </div>
 
+            <p class="cd-infra-line">Hosted on Aerial Professional Services private storage infrastructure.</p>
+
             <div class="cd-hero-notice" role="note">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg>
-              <p>Delivery links are sent by email after your project is complete. Some links are password-protected and may expire. Contact us if you need a replacement.</p>
+              <p>Delivery links are sent by email after your project is complete. Some links are password-protected and may expire after project completion. Archived files can typically be reissued upon request, subject to availability. Contact us if you need a replacement.</p>
             </div>
 
           </div>
@@ -596,9 +605,8 @@
                 Reports
               </div>
             </div>
-            <div class="cd-mock-card-dl">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              Download Files
+            <div class="cd-mock-card-dl" aria-hidden="true">
+              Project Deliverables
             </div>
           </div>
         </div>
