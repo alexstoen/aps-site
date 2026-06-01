@@ -123,102 +123,152 @@
     .breadcrumb-list li { font-size: 12px; color: rgba(255,255,255,.28); }
     .breadcrumb-list li:last-child { color: rgba(255,255,255,.65); }
 
-    /* ─── HERO ────────────────────────────────────────────── */
-    .cd-hero {
-      background: var(--dark);
-      padding: 148px 0 88px;
-      position: relative;
-      overflow: hidden;
+    /* ─── HERO — SPLIT LAYOUT ─────────────────────────────── */
+    .cd-hero { background: var(--dark); position: relative; overflow: hidden; }
+    .cd-hero-inner {
+      display: grid;
+      grid-template-columns: 52fr 48fr;
+      min-height: 580px;
+      align-items: stretch;
     }
-    .cd-hero-grid {
+    /* ── Left: text panel ── */
+    .cd-hero-left {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 128px 56px 80px 0;
+    }
+    .cd-hero-left::before {
+      content: '';
       position: absolute;
       inset: 0;
       background-image:
-        repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(255,255,255,.022) 59px, rgba(255,255,255,.022) 60px),
-        repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(255,255,255,.022) 59px, rgba(255,255,255,.022) 60px);
+        repeating-linear-gradient(0deg, transparent, transparent 59px, rgba(255,255,255,.02) 59px, rgba(255,255,255,.02) 60px),
+        repeating-linear-gradient(90deg, transparent, transparent 59px, rgba(255,255,255,.02) 59px, rgba(255,255,255,.02) 60px);
       pointer-events: none;
     }
     .cd-hero-glow {
       position: absolute;
-      top: -120px;
-      left: -80px;
-      width: 560px;
-      height: 560px;
+      top: -80px; left: -120px;
+      width: 480px; height: 480px;
       border-radius: 50%;
       background: radial-gradient(circle, rgba(185,137,71,.10) 0%, transparent 70%);
       pointer-events: none;
     }
-    .cd-hero-content {
+    .cd-hero-left-content { position: relative; z-index: 1; }
+    /* ── Right: image panel ── */
+    .cd-hero-right {
       position: relative;
-      z-index: 1;
-      max-width: 680px;
+      overflow: hidden;
+      min-height: 580px;
     }
+    .cd-hero-right img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: 30% center;
+    }
+    .cd-hero-right-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to right, var(--dark) 0%, rgba(9,13,19,.30) 45%, rgba(9,13,19,.08) 100%);
+    }
+    /* ── Mock delivery card ── */
+    .cd-mock-card {
+      position: absolute;
+      bottom: 36px; right: 24px;
+      width: 214px;
+      background: rgba(6,10,15,.84);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255,255,255,.11);
+      border-radius: var(--radius-md);
+      padding: 16px 18px;
+      z-index: 2;
+    }
+    .cd-mock-card-header {
+      display: flex; align-items: center; gap: 7px;
+      margin-bottom: 11px; padding-bottom: 11px;
+      border-bottom: 1px solid rgba(255,255,255,.07);
+    }
+    .cd-mock-card-header svg { width: 13px; height: 13px; color: var(--blue); flex-shrink: 0; }
+    .cd-mock-card-title { font-size: 11px; font-weight: 500; color: rgba(255,255,255,.82); letter-spacing: .03em; }
+    .cd-mock-card-type { font-size: 9px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--blue); margin-bottom: 3px; }
+    .cd-mock-card-project { font-size: 12px; font-weight: 500; color: rgba(255,255,255,.78); line-height: 1.35; margin-bottom: 12px; }
+    .cd-mock-card-files { display: flex; flex-direction: column; gap: 5px; margin-bottom: 13px; }
+    .cd-mock-card-file { display: flex; align-items: center; gap: 7px; font-size: 11px; color: rgba(255,255,255,.52); }
+    .cd-mock-card-file svg { width: 12px; height: 12px; color: rgba(255,255,255,.3); flex-shrink: 0; }
+    .cd-mock-card-dl {
+      display: flex; align-items: center; justify-content: center; gap: 5px;
+      width: 100%; padding: 8px;
+      background: rgba(185,137,71,.15);
+      border: 1px solid rgba(185,137,71,.32);
+      border-radius: var(--radius-sm);
+      font-size: 11px; font-weight: 500;
+      color: #d4aa5a; letter-spacing: .03em;
+      cursor: default;
+    }
+    .cd-mock-card-dl svg { width: 11px; height: 11px; }
+    /* ── Eyebrow ── */
     .cd-hero-eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
+      display: inline-flex; align-items: center; gap: 8px;
       background: rgba(255,255,255,.07);
       border: 1px solid rgba(255,255,255,.13);
       border-radius: 100px;
       padding: 5px 14px;
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,.72);
-      margin-bottom: 28px;
+      font-size: 11px; font-weight: 500; letter-spacing: .1em;
+      text-transform: uppercase; color: rgba(255,255,255,.72);
+      margin-bottom: 24px;
     }
     .cd-hero-eyebrow-dot { width: 6px; height: 6px; border-radius: 50%; background: #c9a84c; flex-shrink: 0; }
+    /* ── Headline ── */
     .cd-hero-h1 {
       font-family: var(--serif);
-      font-size: clamp(38px, 5.5vw, 62px);
-      font-weight: 400;
-      line-height: 1.05;
+      font-size: clamp(34px, 4.2vw, 54px);
+      font-weight: 400; line-height: 1.07;
       letter-spacing: -.025em;
-      color: var(--white);
-      margin-bottom: 20px;
+      color: var(--white); margin-bottom: 18px;
     }
     .cd-hero-h1 em { color: #d4aa5a; font-style: italic; }
+    /* ── Sub copy ── */
     .cd-hero-sub {
-      font-size: clamp(15px, 1.8vw, 17px);
-      font-weight: 300;
-      line-height: 1.68;
-      color: rgba(255,255,255,.6);
-      max-width: 500px;
-      margin-bottom: 36px;
+      font-size: 15px; font-weight: 300;
+      line-height: 1.7; color: rgba(255,255,255,.58);
+      max-width: 440px; margin-bottom: 32px;
     }
-    .cd-hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-bottom: 40px; }
+    /* ── CTA button ── */
+    .cd-hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-bottom: 24px; }
     .cd-hero-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: var(--blue);
-      color: var(--white);
-      font-family: var(--sans);
-      font-size: 15px;
-      font-weight: 500;
-      padding: 15px 32px;
-      border-radius: var(--radius-sm);
-      border: none;
-      cursor: pointer;
-      transition: background .2s ease, transform .2s ease;
-      white-space: nowrap;
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--blue); color: var(--white);
+      font-family: var(--sans); font-size: 14px; font-weight: 500;
+      padding: 13px 28px; border-radius: var(--radius-sm);
+      border: none; cursor: pointer;
+      transition: background .2s ease, transform .2s ease; white-space: nowrap;
     }
     .cd-hero-btn:hover { background: var(--blue-hover); transform: translateY(-1px); }
-    .cd-hero-btn svg { width: 17px; height: 17px; transition: transform .2s ease; }
+    .cd-hero-btn svg { width: 16px; height: 16px; transition: transform .2s ease; }
     .cd-hero-btn:hover svg { transform: translateX(3px); }
-    .cd-hero-notice {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      background: rgba(255,255,255,.045);
+    /* ── Trust pills ── */
+    .cd-trust-pills { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 24px; }
+    .cd-trust-pill {
+      display: inline-flex; align-items: center; gap: 5px;
+      background: rgba(255,255,255,.055);
       border: 1px solid rgba(255,255,255,.09);
-      border-radius: var(--radius-sm);
-      padding: 13px 16px;
-      max-width: 500px;
+      border-radius: 100px; padding: 4px 11px;
+      font-size: 11px; color: rgba(255,255,255,.52);
     }
-    .cd-hero-notice svg { width: 15px; height: 15px; color: rgba(255,255,255,.4); flex-shrink: 0; margin-top: 2px; }
-    .cd-hero-notice p { font-size: 12px; color: rgba(255,255,255,.42); line-height: 1.6; }
+    .cd-trust-pill svg { width: 11px; height: 11px; color: var(--blue); flex-shrink: 0; }
+    /* ── Notice ── */
+    .cd-hero-notice {
+      display: flex; align-items: flex-start; gap: 9px;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: var(--radius-sm);
+      padding: 11px 14px; max-width: 440px;
+    }
+    .cd-hero-notice svg { width: 14px; height: 14px; color: rgba(255,255,255,.35); flex-shrink: 0; margin-top: 2px; }
+    .cd-hero-notice p { font-size: 11px; color: rgba(255,255,255,.38); line-height: 1.6; }
 
     /* ─── WHAT YOU CAN EXPECT ─────────────────────────────── */
     #cd-what { padding: var(--section-y) 0; background: var(--white); }
@@ -383,7 +433,17 @@
       .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
       .cd-support-grid { gap: 48px; }
     }
+    @media (max-width: 1024px) {
+      .cd-hero-left { padding: 112px 40px 72px 0; }
+    }
     @media (max-width: 860px) {
+      .cd-hero-inner { grid-template-columns: 1fr; min-height: auto; }
+      .cd-hero-right { min-height: 280px; order: -1; }
+      .cd-hero-right-overlay { background: linear-gradient(to bottom, rgba(9,13,19,.15) 0%, var(--dark) 90%); }
+      .cd-hero-left { padding: 40px 0 64px; }
+      .cd-hero-sub { max-width: none; }
+      .cd-hero-notice { max-width: none; }
+      .cd-mock-card { display: none; }
       .cd-cards { grid-template-columns: 1fr 1fr; }
       .cd-support-grid { grid-template-columns: 1fr; gap: 48px; }
     }
@@ -391,8 +451,9 @@
       :root { --section-y: 56px; }
       .nav-links, .nav-right { display: none; }
       .nav-burger { display: flex; }
-      .cd-hero { padding: 120px 0 72px; }
-      .cd-hero-h1 { font-size: 36px; }
+      .cd-hero-right { min-height: 230px; }
+      .cd-hero-h1 { font-size: 34px; }
+      .cd-trust-pills { gap: 6px; }
       .cd-cards { grid-template-columns: 1fr; }
       .footer-top { grid-template-columns: 1fr; gap: 32px; }
       .footer-bottom { flex-direction: column; align-items: flex-start; gap: 8px; }
@@ -444,34 +505,104 @@
     </div>
   </div>
 
-  <!-- ─── HERO ──────────────────────────────────────────── -->
+  <!-- ─── HERO — SPLIT ─────────────────────────────────── -->
   <section class="cd-hero" aria-labelledby="cd-h1">
-    <div class="cd-hero-grid" aria-hidden="true"></div>
-    <div class="cd-hero-glow" aria-hidden="true"></div>
     <div class="container">
-      <div class="cd-hero-content">
-        <div class="cd-hero-eyebrow">
-          <span class="cd-hero-eyebrow-dot" aria-hidden="true"></span>
-          Aerial Professional Services &nbsp;·&nbsp; Project Delivery
+      <div class="cd-hero-inner">
+
+        <!-- Left: text content -->
+        <div class="cd-hero-left">
+          <div class="cd-hero-glow" aria-hidden="true"></div>
+          <div class="cd-hero-left-content">
+
+            <div class="cd-hero-eyebrow">
+              <span class="cd-hero-eyebrow-dot" aria-hidden="true"></span>
+              Aerial Professional Services &nbsp;·&nbsp; Project Delivery
+            </div>
+
+            <h1 class="cd-hero-h1" id="cd-h1">
+              Project Files<br><em>Delivered Securely.</em>
+            </h1>
+
+            <p class="cd-hero-sub">
+              Your project files are delivered by email through a unique, private
+              link created specifically for your project. No public directory.
+              No shared client portal.
+            </p>
+
+            <div class="cd-hero-actions">
+              <a href="mailto:info@aerialprofessionalservices.com?subject=Client%20Delivery%20Link%20Request" class="cd-hero-btn">
+                Request Replacement Link
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </a>
+            </div>
+
+            <div class="cd-trust-pills" role="list">
+              <span class="cd-trust-pill" role="listitem">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+                Private delivery links
+              </span>
+              <span class="cd-trust-pill" role="listitem">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 11-7.778 7.778 5.5 5.5 0 017.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg>
+                Password protection available
+              </span>
+              <span class="cd-trust-pill" role="listitem">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Direct download access
+              </span>
+              <span class="cd-trust-pill" role="listitem">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
+                Hosted by Aerial Professional Services
+              </span>
+            </div>
+
+            <div class="cd-hero-notice" role="note">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg>
+              <p>Delivery links are sent by email after your project is complete. Some links are password-protected and may expire. Contact us if you need a replacement.</p>
+            </div>
+
+          </div>
         </div>
-        <h1 class="cd-hero-h1" id="cd-h1">
-          Secure Client<br><em>Deliveries</em>
-        </h1>
-        <p class="cd-hero-sub">
-          Your project files are delivered by email — each client receives a
-          unique, private link directly to their deliverables. No shared portal.
-          No public directory.
-        </p>
-        <div class="cd-hero-actions">
-          <a href="mailto:info@aerialprofessionalservices.com?subject=Client%20Delivery%20Link%20Request" class="cd-hero-btn">
-            Need a Delivery Link?
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          </a>
+
+        <!-- Right: aerial image + mock delivery card -->
+        <div class="cd-hero-right" aria-hidden="true">
+          <img
+            src="/images/client-deliveries-hero.jpg"
+            alt="Aerial view of completed Les Schwab Tire Center in Woodland Park with Pikes Peak and Rampart Range in the background"
+            fetchpriority="high"
+            onerror="this.style.display='none'"
+          />
+          <div class="cd-hero-right-overlay"></div>
+
+          <!-- Floating mock delivery card -->
+          <div class="cd-mock-card">
+            <div class="cd-mock-card-header">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span class="cd-mock-card-title">Client Deliveries</span>
+            </div>
+            <div class="cd-mock-card-type">Construction</div>
+            <div class="cd-mock-card-project">Les Schwab Woodland Park</div>
+            <div class="cd-mock-card-files">
+              <div class="cd-mock-card-file">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
+                Photos
+              </div>
+              <div class="cd-mock-card-file">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+                Video
+              </div>
+              <div class="cd-mock-card-file">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/></svg>
+                Reports
+              </div>
+            </div>
+            <div class="cd-mock-card-dl">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download Files
+            </div>
+          </div>
         </div>
-        <div class="cd-hero-notice" role="note">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg>
-          <p>Delivery links are sent directly by email after your project is complete. Some links are password-protected and may expire after project completion. Contact us if you need a replacement link.</p>
-        </div>
+
       </div>
     </div>
   </section>
