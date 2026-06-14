@@ -6,7 +6,7 @@
 
   <!-- SEO -->
   <title>Real Estate Drone Photography Colorado Springs | Aerial Professional Services</title>
-  <meta name="description" content="Aerial property photography in Colorado Springs — residential listings, commercial properties, multifamily, and mixed-use. MLS and CoStar-ready files delivered within 24 hours. FAA Part 107, veteran-owned." />
+  <meta name="description" content="Real estate drone photography in Colorado Springs with MLS-ready aerial photos and 4K video delivered fast by an FAA-certified pilot." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://aerialprofessionalservices.com/real-estate-drone-photography" />
 
@@ -121,6 +121,12 @@
     ]
   }
   </script>
+
+  <!-- LCP preload: real estate hero — mobile WebP, then desktop WebP -->
+  <link rel="preload" as="image" href="/images/re-hero-mobile.webp" type="image/webp"
+        fetchpriority="high" media="(max-width: 640px)" />
+  <link rel="preload" as="image" href="/images/re-hero.webp" type="image/webp"
+        fetchpriority="high" media="(min-width: 641px)" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -405,8 +411,8 @@
         </a>
         <ul class="nav-links" role="list">
           <li><a href="/#services">Services</a></li>
-          <li><a href="/roof-inspections">Roof Inspections</a></li>
           <li><a href="/#portfolio">Portfolio</a></li>
+          <li><a href="/#about">About</a></li>
           <li><a href="/#contact">Contact</a></li>
         </ul>
         <div class="nav-right">
@@ -422,8 +428,8 @@
   <!-- Mobile menu -->
   <div class="nav-mobile" id="navMobile" role="dialog" aria-label="Mobile navigation">
     <a href="/#services">Services</a>
-    <a href="/roof-inspections">Roof Inspections</a>
     <a href="/#portfolio">Portfolio</a>
+    <a href="/#about">About</a>
     <a href="/#contact">Contact</a>
     <div class="nav-mobile-footer">
       <a href="mailto:info@aerialprofessionalservices.com">Email — fastest response</a>
@@ -435,12 +441,16 @@
   <!-- ─── HERO ─────────────────────────────────────────────── -->
   <section class="page-hero" aria-labelledby="hero-h1">
     <div class="page-hero-bg">
-      <img
-        src="/images/re-hero.jpg"
-        alt="Aerial view of a Colorado residential neighbourhood at peak fall foliage — mature tree canopy in autumn colour, Rocky Mountain backdrop, established community with retail and amenities visible"
-        fetchpriority="high"
-        onerror="this.style.display='none'"
-      />
+      <picture>
+        <source srcset="/images/re-hero-mobile.webp" type="image/webp" media="(max-width: 640px)" />
+        <source srcset="/images/re-hero.webp" type="image/webp" media="(min-width: 641px)" />
+        <img
+          src="/images/re-hero.jpg"
+          alt="Aerial view of a Colorado residential neighbourhood at peak fall foliage — mature tree canopy in autumn colour, Rocky Mountain backdrop, established community with retail and amenities visible"
+          fetchpriority="high"
+          onerror="this.style.display='none'"
+        />
+      </picture>
     </div>
     <div class="page-hero-grid" aria-hidden="true"></div>
     <div class="container">

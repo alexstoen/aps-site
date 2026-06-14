@@ -4,7 +4,10 @@ files4/
 copy-sources.sh
 process-images.sh
 install-optimized-images.sh
+install-inspection-images.sh
+install-re-images.sh
 images/old/
 *.dng
 *.DNG
 *_SOURCE.*
+marketing/
