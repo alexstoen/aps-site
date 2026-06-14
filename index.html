@@ -746,6 +746,22 @@
       .cin-heading { font-size: 28px; }
       .cin-body { max-width: none; }
     }
+
+    /* ─── FAQ ───────────────────────────────────────────────── */
+    #faq { padding: var(--section-y) 0; background: var(--off); }
+    .faq-header { text-align: center; max-width: 720px; margin: 0 auto 56px; }
+    .faq-header .section-head { font-size: clamp(28px, 4vw, 44px); }
+    .faq-intro { font-size: 15px; color: var(--ink-2); line-height: 1.75; margin-top: 20px; }
+    .faq-list { max-width: 800px; margin: 0 auto; }
+    .faq-item { padding: 28px 0; border-bottom: 1px solid var(--rule); }
+    .faq-item:first-child { border-top: 1px solid var(--rule); }
+    .faq-q { font-family: var(--serif); font-size: clamp(17px, 2vw, 20px); color: var(--ink); margin-bottom: 10px; font-weight: 400; line-height: 1.35; }
+    .faq-a { font-size: 15px; color: var(--ink-2); line-height: 1.75; }
+    .faq-cta { text-align: center; margin-top: 48px; font-size: 15px; color: var(--ink-3); font-style: italic; }
+    @media (max-width: 640px) {
+      .faq-item { padding: 22px 0; }
+      .faq-q { font-size: 17px; }
+    }
   </style>
 </head>
 
@@ -1297,6 +1313,52 @@
           <div class="cta-phone-line">Or text us at <a href="sms:+17193080513">(719) 308-0513</a></div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ─── FAQ ──────────────────────────────────────────────── -->
+  <section id="faq" aria-labelledby="faq-heading">
+    <div class="container">
+      <div class="faq-header reveal">
+        <div class="section-label">FAQ</div>
+        <h2 class="section-head" id="faq-heading">Frequently Asked<br>Questions</h2>
+        <p class="faq-intro">Aerial Professional Services provides FAA Part 107 certified drone photography, 4K aerial video, real estate media, construction progress documentation, drone roof documentation, commercial property imagery, and orthomosaic aerial mapping across Colorado Springs and the Pikes Peak region. Below are answers to common questions from clients.</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item reveal">
+          <h3 class="faq-q">Is Aerial Professional Services FAA certified to fly commercially?</h3>
+          <p class="faq-a">Yes. All commercial drone operations are conducted under FAA Part 107 certification, which is required by federal law for paid aerial photography, videography, aerial documentation, and orthomosaic mapping in the United States. Certificate details are available on request.</p>
+        </div>
+        <div class="faq-item reveal">
+          <h3 class="faq-q">What areas do you serve beyond Colorado Springs?</h3>
+          <p class="faq-a">We serve clients throughout El Paso County and the broader Pikes Peak region, including Pueblo, Monument, Manitou Springs, Fountain, Peyton, Woodland Park, Castle Rock, Douglas County, Cañon City, Florence, and Salida. For projects outside these areas, contact us to discuss availability.</p>
+        </div>
+        <div class="faq-item reveal">
+          <h3 class="faq-q">How quickly will I receive my photos or videos?</h3>
+          <p class="faq-a">Most deliverables are completed within 48 hours of the flight. Real estate aerial photography is typically turned around within 24 hours. Timelines may vary based on weather, FAA airspace authorization requirements, and project scope.</p>
+        </div>
+        <div class="faq-item reveal">
+          <h3 class="faq-q">Does Aerial Professional Services carry insurance?</h3>
+          <p class="faq-a">Yes. We carry $1 million in commercial liability insurance for all drone operations. Certificates of insurance are available on request and are commonly provided for contractors, property managers, and commercial clients.</p>
+        </div>
+        <div class="faq-item reveal">
+          <h3 class="faq-q">What does drone roof documentation include?</h3>
+          <p class="faq-a">Drone roof documentation provides aerial photos of the roof surface, perimeter, slopes, and visible roof features from above. When requested, we can provide an annotated PDF report with labeled photos — useful for insurance documentation, contractor pre-bids, or pre-sale property records. This is visual documentation only, not a licensed structural or home inspection.</p>
+        </div>
+        <div class="faq-item reveal">
+          <h3 class="faq-q">Do you provide aerial photography for real estate listings?</h3>
+          <p class="faq-a">Yes. We provide high-resolution aerial photos and 4K aerial video for residential listings, commercial properties, vacant land, and development sites. Deliverables are formatted for MLS, websites, and social media use, and are typically ready within 24 hours.</p>
+        </div>
+        <div class="faq-item reveal">
+          <h3 class="faq-q">Is Aerial Professional Services veteran-owned?</h3>
+          <p class="faq-a">Yes. Aerial Professional Services was founded and is operated by a U.S. Navy veteran and holds SDVOB (Service-Disabled Veteran-Owned Business) certification through the State of Colorado.</p>
+        </div>
+        <div class="faq-item reveal">
+          <h3 class="faq-q">Are there areas in Colorado Springs where you cannot fly?</h3>
+          <p class="faq-a">Some locations require FAA airspace authorization before flight, including areas near Colorado Springs Airport and Peterson Space Force Base. Certain locations may also be restricted due to military airspace, temporary flight restrictions, weather, or public safety considerations. Every flight is reviewed for FAA compliance and site safety before launch.</p>
+        </div>
+      </div>
+      <p class="faq-cta reveal"><em>Contact Aerial Professional Services through the website or Google Business Profile to discuss your project.</em></p>
     </div>
   </section>
 
