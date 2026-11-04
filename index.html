@@ -1449,6 +1449,9 @@
                     <option value="roof-inspection">Drone roof inspection</option>
                     <option value="construction">Construction progress monitoring</option>
                     <option value="commercial">Commercial aerial photography</option>
+                    <option value="residential">Residential / property photography</option>
+                    <option value="events">Events aerial video</option>
+                    <option value="mapping">Mapping / orthomosaic</option>
                     <option value="other">Other / not sure yet</option>
                   </select>
                 </div>
@@ -1631,6 +1634,13 @@
       const form = document.getElementById('quoteForm');
       const formContent = document.getElementById('formContent');
       const formSuccess = document.getElementById('formSuccess');
+
+      // Preselect the service when arriving from a service page (/?service=roof-inspection#contact)
+      try {
+        const pre = new URLSearchParams(location.search).get('service');
+        const sel = document.getElementById('service');
+        if (pre && sel && sel.querySelector('option[value="' + pre + '"]')) sel.value = pre;
+      } catch (err) {}
 
       if (form) {
         form.addEventListener('submit', function (e) {
