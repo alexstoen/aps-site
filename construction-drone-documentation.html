@@ -21,7 +21,6 @@
   <meta property="og:url"         content="https://aerialprofessionalservices.com/construction-drone-documentation" />
   <meta property="og:title"       content="Construction Drone Documentation Colorado Springs | Aerial Professional Services" />
   <meta property="og:description" content="Monthly aerial progress photos, video and orthomosaic maps for active build sites. Plans from $350/month. FAA licensed, veteran-owned." />
-  <meta property="og:image"       content="https://aerialprofessionalservices.com/images/cn-hero.jpg" />
   <meta property="og:image:width"  content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt"   content="Aerial view of a completed commercial development with Pikes Peak in the background" />
@@ -32,7 +31,6 @@
   <meta name="twitter:card"        content="summary_large_image" />
   <meta name="twitter:title"       content="Construction Drone Documentation Colorado Springs | Aerial Professional Services" />
   <meta name="twitter:description" content="Monthly drone progress documentation for build sites. Plans from $350/month. FAA licensed, Colorado Springs." />
-  <meta name="twitter:image"       content="https://aerialprofessionalservices.com/images/cn-hero.jpg" />
 
   <!-- Structured Data: Service -->
   <script type="application/ld+json">
@@ -416,7 +414,9 @@
       .photo-grid-mobile { grid-template-columns: 1fr !important; grid-template-rows: unset !important; }
       .photo-grid-mobile > div:first-child { grid-row: auto !important; height: 260px; }
       .photo-grid-mobile > div { height: 200px; }
+      .photo-grid-mobile > .cn-wide-cell { grid-column: auto !important; }
     }
+    .photo-grid-mobile > .cn-wide-cell { grid-column: 2 / 4; }
   </style>
 </head>
 
@@ -465,12 +465,6 @@
   <!-- ─── HERO ─────────────────────────────────────────────── -->
   <section class="page-hero" aria-labelledby="hero-h1">
     <div class="page-hero-bg">
-      <img
-        src="/images/cn-hero.jpg"
-        alt="Aerial view of a completed commercial development with Pikes Peak and the Front Range in the background"
-        fetchpriority="high"
-        onerror="this.style.display='none'"
-      />
     </div>
     <div class="page-hero-grid" aria-hidden="true"></div>
     <div class="container">
@@ -594,13 +588,10 @@
         <div style="overflow: hidden; background: #1a2a3a;" class="reveal reveal-d1">
           <img src="/images/cn-gallery-04.jpg" alt="Aerial view of an active commercial construction site with the snow-capped Rampart Range and Colorado Springs extending to the mountains behind" loading="lazy" style="width:100%;height:100%;object-fit:cover;" onerror="this.parentElement.style.background='#1a2a3a'" />
         </div>
-        <div style="overflow: hidden; background: #1a2a3a;" class="reveal reveal-d2">
-          <img src="/images/cn-gallery-09.jpg" alt="Daytime aerial of a completed commercial retail and mixed-use development with Pikes Peak prominently centered, fresh parking lot striping, and new multifamily buildings adjacent, Colorado Springs" loading="lazy" style="width:100%;height:100%;object-fit:cover;" onerror="this.parentElement.style.background='#1a2a3a'" />
-        </div>
         <div style="overflow: hidden; background: #1a2a3a;" class="reveal reveal-d1">
           <img src="/images/cn-gallery-02.jpg" alt="Aerial view of a completed commercial daycare facility with colorful playground and fresh landscaping, Colorado Springs" loading="lazy" style="width:100%;height:100%;object-fit:cover;" onerror="this.parentElement.style.background='#1a2a3a'" />
         </div>
-        <div style="overflow: hidden; background: #1a2a3a;" class="reveal reveal-d2">
+        <div style="overflow: hidden; background: #1a2a3a;" class="reveal reveal-d2 cn-wide-cell">
           <img src="/images/cn-gallery-07.jpg" alt="Low aerial view of a completed two-story deck addition at blue hour with black steel railings, LED step lighting on the staircase, screened upper porch with warm interior glow, and snow on the ground" loading="lazy" style="width:100%;height:100%;object-fit:cover;" onerror="this.parentElement.style.background='#1a2a3a'" />
         </div>
       </div>
