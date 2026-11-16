@@ -331,6 +331,7 @@
       grid-template-columns: 1fr 1fr;
       margin-top: 6px;
     }
+    .cn-split-single { grid-template-columns: 1fr; }
     .cn-split-item {
       height: 480px; overflow: hidden;
       position: relative; cursor: default;
@@ -643,15 +644,7 @@
   <!-- ─── SPLIT A ────────────────────────────────────────────────── -->
   <!-- 50/50 — symmetric grid, engineering discipline -->
   <!-- Daycare completion (left) | Lit deck blue-hour (right) -->
-  <div class="cn-split" role="group" aria-label="Construction portfolio — project range">
-    <div class="cn-split-item">
-      <img
-        src="/images/cn-gallery-02.jpg"
-        alt="Aerial view of a completed commercial daycare facility with colorful playground and fresh landscaping, Colorado Springs"
-        loading="lazy"
-        onerror="this.parentElement.style.background='#111720'"
-      />
-    </div>
+  <div class="cn-split cn-split-single" role="group" aria-label="Construction portfolio — project range">
     <div class="cn-split-item">
       <img
         src="/images/cn-gallery-03.jpg"
@@ -726,18 +719,6 @@
     <p class="cn-feature-caption">Construction Progress Documentation &nbsp;·&nbsp; Colorado Springs &nbsp;·&nbsp; 2026</p>
   </div>
 
-  <!-- ─── SPLIT B ─────────────────────────────────────────────────── -->
-  <!-- Commercial completions — retail development and childcare facility -->
-  <div class="cn-split" style="margin-top:6px;grid-template-columns:1fr" role="group" aria-label="Construction portfolio — commercial completions">
-    <div class="cn-split-item">
-      <img
-        src="/images/cn-gallery-10.jpg"
-        alt="Aerial view of a newly completed commercial childcare facility with colorful playground equipment and orange shade canopies in the fenced yard, modern flat-roof construction, Colorado Springs"
-        loading="lazy"
-        onerror="this.parentElement.style.background='#111720'"
-      />
-    </div>
-  </div>
 
   <!-- ─── SPLIT C ─────────────────────────────────────────────────── -->
   <!-- Blue-hour documentation — residential subdivision and deck addition -->
@@ -774,19 +755,6 @@
     <p class="cn-feature-caption">Construction Documentation &nbsp;·&nbsp; Colorado Springs &nbsp;·&nbsp; 2026</p>
   </div>
 
-  <!-- ─── CLOSER ────────────────────────────────────────────────── -->
-  <!-- Active construction + Rampart Range — the work, in Colorado -->
-  <div class="cn-closer">
-    <div class="cn-closer-img">
-      <img
-        src="/images/cn-gallery-04.jpg"
-        alt="Aerial view of an active commercial construction site with the snow-capped Rampart Range and Colorado Springs extending to the mountains behind"
-        loading="lazy"
-        onerror="this.style.display='none'"
-      />
-    </div>
-    <p class="cn-closer-caption">Active Construction &nbsp;·&nbsp; Colorado Springs &nbsp;·&nbsp; Rampart Range</p>
-  </div>
 
   <!-- ─── CTA ───────────────────────────────────────────────────── -->
   <section id="cta-section" aria-labelledby="cta-h2">
