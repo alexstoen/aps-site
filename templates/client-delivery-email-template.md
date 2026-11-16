@@ -112,7 +112,7 @@ It was a pleasure working on this project. If you need additional shots, a diffe
 
 Alex Stoen
 **Aerial Professional Services LLC**
-FAA Part 107 Certified · $1M Insured · Veteran-Owned
+FAA Part 107 Certified · Project-Specific Liability Insurance Available · Veteran-Owned
 (719) 308-0513 · info@aerialprofessionalservices.com
 https://aerialprofessionalservices.com
 
@@ -286,4 +286,4 @@ Keep folder names clean — clients see them when they open the share link.
 ---
 
 *Aerial Professional Services LLC · Colorado Springs, CO*
-*FAA Part 107 · $1M Insured · Veteran-Owned · SDVOB Certified*
+*FAA Part 107 · Project-Specific Liability Insurance Available · Veteran-Owned · SDVOB Certified*
