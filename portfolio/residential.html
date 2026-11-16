@@ -336,6 +336,7 @@
     .rp-split-a { grid-template-columns: 55fr 45fr; margin-top: 6px; }
     /* Split B: wide neighborhood (45%) | stone estate (55%) */
     .rp-split-b { grid-template-columns: 45fr 55fr; }
+    .rp-split-single { grid-template-columns: 1fr; }
 
     .rp-split-item {
       height: 480px; overflow: hidden;
@@ -668,15 +669,7 @@
 
   <!-- ─── SPLIT A ────────────────────────────────────────────────── -->
   <!-- Premium estate (55%) | Lit deck blue-hour (45%) -->
-  <div class="rp-split rp-split-a" role="group" aria-label="Residential portfolio — premium homes">
-    <div class="rp-split-item">
-      <img
-        src="/images/rp-gallery-02.jpg"
-        alt="Aerial view of a premium estate home with metal standing-seam roof surrounded by mature Colorado pines, Front Range visible in the distance"
-        loading="lazy"
-        onerror="this.parentElement.style.background='#111720'"
-      />
-    </div>
+  <div class="rp-split rp-split-a rp-split-single" role="group" aria-label="Residential portfolio — premium homes">
     <div class="rp-split-item">
       <img
         src="/images/rp-gallery-03.jpg"
@@ -737,39 +730,7 @@
     </div>
   </section>
 
-  <!-- ─── SPLIT B ────────────────────────────────────────────────── -->
-  <!-- Wide neighborhood, golf course (45%) | Stone estate, pines (55%) -->
-  <div class="rp-split rp-split-b" role="group" aria-label="Residential portfolio — neighborhood scale">
-    <div class="rp-split-item">
-      <img
-        src="/images/rp-gallery-04.jpg"
-        alt="Wide aerial view of a golf-course-adjacent Colorado Springs neighborhood with pine trees and the Front Range beyond"
-        loading="lazy"
-        onerror="this.parentElement.style.background='#111720'"
-      />
-    </div>
-    <div class="rp-split-item">
-      <img
-        src="/images/rp-gallery-05.jpg"
-        alt="Aerial view of a stone-facade estate home nestled within mature Colorado pines"
-        loading="lazy"
-        onerror="this.parentElement.style.background='#111720'"
-      />
-    </div>
-  </div>
 
-  <!-- ─── BRIDGE ────────────────────────────────────────────────── -->
-  <!-- Wide summer neighborhood under dramatic Colorado cloudscape -->
-  <div class="rp-bridge">
-    <div class="rp-bridge-img">
-      <img
-        src="/images/rp-gallery-06.jpg"
-        alt="Wide aerial view of a premium Colorado Springs neighborhood beneath a dramatic summer cloudscape"
-        loading="lazy"
-        onerror="this.style.display='none'"
-      />
-    </div>
-  </div>
 
   <!-- ─── CLOSER ────────────────────────────────────────────────── -->
   <!-- Winter neighborhood + Cheyenne Mountain — Colorado identity, stillness -->
