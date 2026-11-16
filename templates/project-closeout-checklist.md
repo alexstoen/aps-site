@@ -258,5 +258,5 @@ YYYY-MM-DD — [Client Last Name] — [Project Type] — [Location]
 ---
 
 *Aerial Professional Services LLC · Colorado Springs, CO*
-*FAA Part 107 · $1M Insured · Veteran-Owned · SDVOB Certified*
+*FAA Part 107 · Project-Specific Liability Insurance Available · Veteran-Owned · SDVOB Certified*
 *info@aerialprofessionalservices.com · (719) 308-0513*

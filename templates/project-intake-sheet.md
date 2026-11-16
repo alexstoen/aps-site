@@ -343,5 +343,5 @@ Sent does not mean received. Confirm the client opened the delivery link, was ab
 ---
 
 *Aerial Professional Services LLC · Colorado Springs, CO*
-*FAA Part 107 · $1M Insured · Veteran-Owned · SDVOB Certified*
+*FAA Part 107 · Project-Specific Liability Insurance Available · Veteran-Owned · SDVOB Certified*
 *info@aerialprofessionalservices.com · (719) 308-0513*
