@@ -21,7 +21,6 @@
   <meta property="og:url"         content="https://aerialprofessionalservices.com/real-estate-drone-photography" />
   <meta property="og:title"       content="Real Estate Drone Photography Colorado Springs | Aerial Professional Services" />
   <meta property="og:description" content="Aerial property photography for residential and commercial listings in Colorado Springs. 24-hour delivery. FAA licensed, veteran-owned, project-specific insurance available." />
-  <meta property="og:image"       content="https://aerialprofessionalservices.com/images/re-hero.jpg" />
   <meta property="og:image:width"  content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt"   content="Aerial view of a Colorado residential neighbourhood at peak fall foliage with Rocky Mountain backdrop" />
@@ -32,7 +31,6 @@
   <meta name="twitter:card"        content="summary_large_image" />
   <meta name="twitter:title"       content="Real Estate Drone Photography Colorado Springs | Aerial Professional Services" />
   <meta name="twitter:description" content="Aerial property photography for residential and commercial listings. 24-hour delivery. FAA licensed, Colorado Springs." />
-  <meta name="twitter:image"       content="https://aerialprofessionalservices.com/images/re-hero.jpg" />
 
   <!-- Structured Data: Service -->
   <script type="application/ld+json">
@@ -128,11 +126,6 @@
   }
   </script>
 
-  <!-- LCP preload: real estate hero — mobile WebP, then desktop WebP -->
-  <link rel="preload" as="image" href="/images/re-hero-mobile.webp" type="image/webp"
-        fetchpriority="high" media="(max-width: 640px)" />
-  <link rel="preload" as="image" href="/images/re-hero.webp" type="image/webp"
-        fetchpriority="high" media="(min-width: 641px)" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -268,6 +261,7 @@
     .gallery-header .section-head { font-size: clamp(22px, 2.8vw, 30px); }
     .gallery-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; grid-template-rows: 280px 240px; gap: 8px; border-radius: var(--radius-lg); overflow: hidden; }
     .gallery-grid .g-wide { grid-column: 1 / 3; }
+    .gallery-grid.gallery-single { grid-template-columns: 1fr; grid-template-rows: 360px; }
     .gallery-item { overflow: hidden; background: #1a2a3a; }
     .gallery-note { font-size: 12px; color: var(--ink-3); margin-top: 12px; text-align: center; letter-spacing: .03em; }
 
@@ -383,6 +377,7 @@
       .cta-band-inner { flex-direction: column; align-items: flex-start; }
       .cta-band-actions { align-items: flex-start; }
       .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 220px 200px 200px; }
+      .gallery-grid.gallery-single { grid-template-columns: 1fr; grid-template-rows: 300px; }
       .gallery-grid .g-wide { grid-column: 1 / 3; }
     }
     @media (max-width: 640px) {
@@ -392,6 +387,7 @@
       .page-hero-h1 { font-size: 36px; }
       .deliverables-grid { grid-template-columns: 1fr; }
       .gallery-grid { grid-template-columns: 1fr; grid-template-rows: unset; }
+      .gallery-grid.gallery-single { grid-template-rows: unset; }
       .gallery-grid .g-wide { grid-column: auto; }
       .gallery-grid .gallery-item { height: 220px; }
       .footer-top { grid-template-columns: 1fr; gap: 28px; }
@@ -447,16 +443,6 @@
   <!-- ─── HERO ─────────────────────────────────────────────── -->
   <section class="page-hero" aria-labelledby="hero-h1">
     <div class="page-hero-bg">
-      <picture>
-        <source srcset="/images/re-hero-mobile.webp" type="image/webp" media="(max-width: 640px)" />
-        <source srcset="/images/re-hero.webp" type="image/webp" media="(min-width: 641px)" />
-        <img
-          src="/images/re-hero.jpg"
-          alt="Aerial view of a Colorado residential neighbourhood at peak fall foliage — mature tree canopy in autumn colour, Rocky Mountain backdrop, established community with retail and amenities visible"
-          fetchpriority="high"
-          onerror="this.style.display='none'"
-        />
-      </picture>
     </div>
     <div class="page-hero-grid" aria-hidden="true"></div>
     <div class="container">
@@ -515,16 +501,8 @@
   <!-- ─── OVERVIEW ──────────────────────────────────────────── -->
   <section id="overview" class="overview" aria-labelledby="overview-h2">
     <div class="container">
-      <div class="overview-grid">
+      <div class="overview-grid" style="grid-template-columns:1fr;max-width:780px;">
 
-        <div class="overview-img-wrap reveal">
-          <img
-            src="/images/re-overview.jpg"
-            alt="Aerial view of an established Colorado residential suburb — community pool, lake, mature trees, and residential streets visible with the city skyline on the horizon"
-            loading="lazy"
-            onerror="this.parentElement.style.background='linear-gradient(135deg,#1a2a3a,#0d1520)'"
-          />
-        </div>
 
         <div class="reveal reveal-d1">
           <div class="section-label">Aerial Real Estate Photography</div>
@@ -601,34 +579,10 @@
         <div class="section-label">Sample Work</div>
         <h2 class="section-head" id="gallery-h2">Completed aerial shoots.</h2>
       </div>
-      <div class="gallery-grid">
-        <div class="gallery-item g-wide reveal">
-          <img src="/images/re-gallery-02.jpg"
-               alt="Aerial view of Colorado Springs area with Pikes Peak backdrop — residential and commercial properties visible"
-               loading="lazy" style="width:100%;height:100%;object-fit:cover;"
-               onerror="this.parentElement.style.background='#1a2a3a'" />
-        </div>
+      <div class="gallery-grid gallery-single">
         <div class="gallery-item reveal reveal-d1">
           <img src="/images/re-gallery-05.jpg"
                alt="Luxury stone estate in the Colorado foothills — multi-plane roof, circular driveway, mountain backdrop"
-               loading="lazy" style="width:100%;height:100%;object-fit:cover;"
-               onerror="this.parentElement.style.background='#1a2a3a'" />
-        </div>
-        <div class="gallery-item reveal reveal-d1">
-          <img src="/images/re-gallery-01.jpg"
-               alt="Colorado Springs commercial and residential neighbourhood with Pikes Peak in the background"
-               loading="lazy" style="width:100%;height:100%;object-fit:cover;"
-               onerror="this.parentElement.style.background='#1a2a3a'" />
-        </div>
-        <div class="gallery-item reveal reveal-d2">
-          <img src="/images/re-gallery-03.jpg"
-               alt="Mixed-use complex with surrounding residential context, Colorado Springs foothills"
-               loading="lazy" style="width:100%;height:100%;object-fit:cover;"
-               onerror="this.parentElement.style.background='#1a2a3a'" />
-        </div>
-        <div class="gallery-item reveal reveal-d2">
-          <img src="/images/re-gallery-06.jpg"
-               alt="Multifamily residential community with neighbourhood context, Colorado Springs"
                loading="lazy" style="width:100%;height:100%;object-fit:cover;"
                onerror="this.parentElement.style.background='#1a2a3a'" />
         </div>
